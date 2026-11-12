@@ -271,7 +271,7 @@ export const GUIDE = {
         "Conti: contanti, conti con IBAN, carte, PayPal… con il loro saldo iniziale.",
         "Moduli: accendi o spegni Agenda, Progetti, Riparazioni e Magazzino.",
         "Utenti: aggiungi collaboratori e scegli se vedono tutte le attività o solo alcune.",
-        "Account: nome dell'account e minuti di inattività prima del blocco.",
+        "Account: nome dell'account e minuti di inattività prima del blocco. Qui c'è anche «Scarica tutti i miei dati», un solo file con tutto l'account, e, per chi ha creato l'account, «Chiudi l'account»: dopo 30 giorni i dati si cancellano per sempre.",
         "Tipologie: i tipi che hai aggiunto con «Altro»; puoi toglierli dalle proposte.",
         "Aspetto: tema chiaro, scuro o come il sistema.",
         "Registro: l'elenco di tutte le operazioni, che non si può modificare.",

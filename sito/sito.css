@@ -206,6 +206,20 @@ td:first-child { font-weight: 600; }
 .foot nav a:hover { color: var(--text); text-decoration: underline; }
 .notice { font-size: .85rem; color: var(--muted); background: var(--surface-2); border-radius: 10px; padding: 8px 12px; }
 
+/* ---------- Testi legali (privacy, cookie, termini) ---------- */
+.legal { max-width: 820px; display: flex; flex-direction: column; gap: 12px; }
+.legal h2 { font-size: 1.3rem; margin-top: 22px; scroll-margin-top: 80px; }
+.legal h2:first-child { margin-top: 0; }
+.legal h3 { margin-top: 6px; }
+.legal ul, .legal ol { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px; }
+.legal .table-wrap { margin: 2px 0; }
+.legal td:first-child { min-width: 170px; }
+.legal .modulo { border: 1px dashed var(--border); border-radius: 12px; padding: 14px 16px; background: var(--surface-2); }
+.bozze-card { margin-bottom: 28px; }
+.legal-toc { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .95rem; }
+.bozza { border: 1px dashed var(--accent); background: var(--accent-soft); border-radius: 12px; padding: 10px 14px; max-width: 820px; }
+.da-completare { background: #fff1a8; color: #3a2a00; border-radius: 4px; padding: 0 4px; font-weight: 650; }
+
 /* ---------- Telefono e tablet ---------- */
 @media (max-width: 920px) {
   .hero-in { grid-template-columns: 1fr; gap: 34px; }
