@@ -26,6 +26,15 @@ for (const el of document.querySelectorAll('[data-icon]')) {
   el.replaceWith(icon(el.dataset.icon, Number(el.dataset.size) || 20));
 }
 
+// Domande frequenti: se ne apri una, si chiude quella aperta prima (la pagina non diventa lunghissima)
+for (const faq of document.querySelectorAll('.faq')) {
+  faq.addEventListener('toggle', (e) => {
+    const opened = e.target;
+    if (!(opened instanceof HTMLDetailsElement) || !opened.open) return;
+    for (const d of faq.querySelectorAll('details[open]')) if (d !== opened) d.open = false;
+  }, true); // «toggle» non risale: si ascolta in fase di cattura
+}
+
 // Anno nel piè di pagina
 for (const el of document.querySelectorAll('[data-anno]')) el.textContent = String(new Date().getFullYear());
 
@@ -53,4 +62,7 @@ if (box && toc) {
     if (g.consiglio) { const tip = el('div', 'tip'); tip.append(icon('info', 18), el('div', '', g.consiglio)); sec.append(tip); }
     box.append(sec);
   }
+  // un link come guida.html#g-assistente: le sezioni nascono adesso, quindi si scorre qui
+  const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (target) target.scrollIntoView();
 }

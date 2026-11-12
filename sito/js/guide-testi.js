@@ -19,6 +19,7 @@ export const GUIDE = {
       { titolo: "3. Il primo movimento", punti: [
         "In Movimenti registra un'entrata, un'uscita o un trasferimento.",
         "Non sai come registrare un caso? Usa «Come registro…?»: ci sono i casi di tutti i giorni con il modulo già pronto.",
+        "Più veloce ancora: premi «Assistente» e scrivilo a parole, per esempio «ho pagato 45 euro di benzina con la carta».",
       ] },
       { titolo: "4. Clienti e scadenze", punti: [
         "Aggiungi i clienti con cui lavori: poi li colleghi a pagamenti, progetti e appuntamenti.",
@@ -76,6 +77,7 @@ export const GUIDE = {
       ] },
       { titolo: "Strumenti utili", punti: [
         "«Come registro…?»: i casi di tutti i giorni, con il modulo già impostato.",
+        "«Assistente»: scrivi a parole che cosa è successo, anche più cose insieme («ho speso 2 € alle macchinette in contanti e 45 di benzina con la carta»). Ti prepara l'elenco già compilato da controllare e registrare con un tocco. Come scrivergli è spiegato nella guida «Assistente».",
         "«Importa estratto conto»: scegli il file CSV scaricato dalla banca, controlli l'anteprima e importi tutto insieme. I movimenti già presenti sono segnalati e non spuntati.",
         "«Esporta»: un file per Excel con i movimenti che vedi, da dare al commercialista.",
         "Nei trasferimenti, «Commissione pagata» registra anche la spesa della commissione (per esempio la ricarica al tabaccaio).",
@@ -86,6 +88,58 @@ export const GUIDE = {
       ] },
     ],
     consiglio: "Sul telefono il pulsante + in basso apre subito un nuovo movimento.",
+  },
+
+  assistente: {
+    titolo: "Assistente",
+    intro: "Scrivi a parole che cosa è successo, come lo racconteresti a un collega. L'assistente prepara le registrazioni già compilate: tu le controlli e le registri con un tocco.",
+    parti: [
+      { titolo: "Come si usa", punti: [
+        "Premi «Assistente»: è in cima al menu, sul telefono è il fumetto in alto. Se non c'è, il titolare lo accende in Impostazioni → Moduli.",
+        "Scrivi il messaggio e premi «Prepara l'elenco» (dal computer anche Ctrl+Invio).",
+        "Controlla le schede: puoi correggere ogni campo al volo o togliere la spunta a quello che non vuoi registrare.",
+        "Premi «Registra tutto». Finché non lo premi non si salva niente: puoi provare e chiudere.",
+      ] },
+      { titolo: "Cosa sa fare", punti: [
+        "Movimenti: entrate, uscite e trasferimenti, anche dieci in un messaggio.",
+        "Clienti nuovi, progetti, appuntamenti e riparazioni, già collegati tra loro.",
+        "Magazzino: carico, vendita e scarico, con la spesa o l'incasso.",
+        "Scadenze: spese ed entrate che si ripetono, come l'affitto o un abbonamento.",
+        "Sceglie da solo attività e categoria. Quello che non dici lo propone in base a come lavori di solito.",
+      ] },
+      { titolo: "Come scrivere bene", punti: [
+        "Una cosa per frase: è più facile da capire e da controllare.",
+        "Scrivi sempre l'importo e, se puoi, come hai pagato o incassato: «in contanti», «con la carta», «col bancomat», «con bonifico».",
+        "Se hai più attività e non è ovvio quale, dillo: «per il negozio», «spesa personale».",
+        "Le date dille a parole: «ieri», «venerdì», «il 3», «domani alle 15». Se non la dici, vale oggi.",
+        "I clienti scrivili con nome e cognome, come li hai salvati: così li collega a quelli che hai già.",
+        "Per il magazzino scrivi quanti pezzi, il nome dell'articolo e il prezzo al pezzo.",
+      ] },
+      { titolo: "Leggere le schede", punti: [
+        "«Pronta»: è tutto a posto.",
+        "«Da controllare»: manca qualcosa o c'è un dubbio, e il motivo è scritto nella scheda. Correggi il campo e registri.",
+        "«Non valida»: così non si può registrare. Riscrivi il messaggio con i dati giusti.",
+        "Un campo con il bordo giallo e la scritta «proposto» l'ha scelto l'assistente perché non l'avevi detto: dagli un'occhiata.",
+        "Un cliente che hai già non viene creato di nuovo: la sua scheda resta senza spunta e le altre operazioni usano quello che esiste.",
+      ] },
+      { titolo: "Da sapere", punti: [
+        "Tutto o niente: se un'operazione non va, non si registra nessuna e ti dice quale correggere. Così non restano mezze registrazioni.",
+        "Aggiunge soltanto: non modifica e non cancella quello che è già salvato. Per correggere usa la sezione giusta, per esempio Movimenti.",
+        "Non inventa: importi e nomi che non hai scritto restano vuoti, oppure te li chiede.",
+        "Un collaboratore registra solo nelle attività che può usare.",
+        "Senza l'assistente IA (modo prova, gratis) capisce un movimento alla volta, con frasi semplici.",
+        "Con l'assistente IA il messaggio viene mandato ad Anthropic, l'azienda che fa Claude, solo per essere capito; Beelancio non salva il testo che scrivi. Non scrivere dati che non servono, come password o codici.",
+        "Ogni messaggio conta: quanti ne hai usati questo mese lo vedi nel riquadro dell'assistente.",
+      ] },
+      { titolo: "Domande frequenti", punti: [
+        "Registra da solo? No: prepara l'elenco, e registri tu con «Registra tutto».",
+        "Quante cose posso scrivere in un messaggio? Fino a 20 operazioni.",
+        "Ha sbagliato qualcosa? Prima di registrare correggi il campo nella scheda. Se l'hai già registrato, correggilo nella sua sezione.",
+        "Non mi capisce? Scrivi più semplice, una cosa per frase, con importo e modo di pagamento.",
+        "Il cliente risulta «non trovato»? Scrivi nome e cognome come nella sua scheda, oppure chiedi di aggiungerlo come cliente nuovo nello stesso messaggio.",
+      ] },
+    ],
+    consiglio: "Un esempio da provare: «Ieri ho speso 2 € alle macchinette in contanti. Oggi 45 € di benzina con la carta. Aggiungi il cliente Marco Rossi, telefono 333 1234567, e fissa un appuntamento con lui domani alle 15. Carica in magazzino 10 confezioni di viti a 3 € l'una, pagate col bancomat. Ricordami ogni mese, il giorno 5, l'affitto da 500 €.»",
   },
 
   scadenze: {
@@ -248,4 +302,4 @@ export const GUIDE = {
 };
 
 // Ordine in cui le guide compaiono nella pagina «Guida» del sito.
-export const ORDINE_GUIDE = ['primi_passi', 'bilancio', 'movimenti', 'scadenze', 'clienti', 'agenda', 'progetti', 'riparazioni', 'magazzino', 'impostazioni', 'accesso'];
+export const ORDINE_GUIDE = ['primi_passi', 'bilancio', 'movimenti', 'assistente', 'scadenze', 'clienti', 'agenda', 'progetti', 'riparazioni', 'magazzino', 'impostazioni', 'accesso'];
