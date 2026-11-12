@@ -26,7 +26,8 @@ export const GUIDE = {
         "In Scadenze metti le spese che si ripetono (affitto, abbonamenti, bollette): l'app te le ricorda.",
       ] },
       { titolo: "5. Sicurezza", punti: [
-        "In Accesso e PIN attiva un PIN di 6 cifre per riaprire l'app più in fretta sul tuo dispositivo.",
+        "Tocca il tuo nome in basso nel menu e apri Accesso e PIN: attiva un PIN di 6 cifre per riaprire l'app più in fretta sul tuo dispositivo.",
+        "Sempre lì puoi attivare la verifica in due passaggi e creare i codici di recupero, per non restare mai chiuso fuori.",
         "Ogni giorno Beelancio salva una copia dei dati. Tienine anche una fuori dal computer.",
       ] },
     ],
@@ -286,20 +287,59 @@ export const GUIDE = {
 
   accesso: {
     titolo: "Accesso e PIN",
-    intro: "La tua sicurezza: password, PIN e dispositivi.",
+    intro: "La tua sicurezza: password, PIN, verifica in due passaggi e codici di recupero. Si apre toccando il tuo nome in basso nel menu.",
     parti: [
-      { titolo: "Password e PIN", punti: [
+      { titolo: "Entrare", punti: [
+        "Si entra con l'email oppure con il nome utente, e la password.",
         "La password ha almeno 10 caratteri, una maiuscola, una minuscola e un carattere speciale.",
         "Il PIN di 6 cifre riapre l'app più in fretta su questo dispositivo. Attivalo solo su un dispositivo tuo.",
-        "Dopo 5 tentativi sbagliati PIN e password si bloccano per 15 minuti.",
+        "Dopo 5 tentativi sbagliati PIN, password e codici si bloccano per 15 minuti.",
+      ] },
+      { titolo: "Verifica in due passaggi", punti: [
+        "Gratis per tutti: oltre alla password serve un codice di 6 cifre che cambia ogni 30 secondi, da un'app sul telefono (Google Authenticator, Microsoft Authenticator o simili).",
+        "Per attivarla: «Attiva la verifica», scrivi la password, inserisci la chiave nell'app del telefono e scrivi il primo codice.",
+        "Il PIN su un dispositivo di fiducia continua a funzionare senza codice.",
+        "Hai cambiato telefono? Spegni la verifica e riattivala con il telefono nuovo.",
+      ] },
+      { titolo: "Codici di recupero", punti: [
+        "Sono 10 codici da conservare in un posto sicuro (stampati o in un file). Ognuno vale una volta.",
+        "Servono se dimentichi la password («Password dimenticata?» nella schermata di accesso) o se non hai il telefono per la verifica.",
+        "Puoi crearne di nuovi quando vuoi: quelli vecchi non valgono più.",
+        "Chi si iscrive con il nome utente li riceve subito: senza email sono l'unico modo per rientrare da solo.",
       ] },
       { titolo: "Dispositivi e blocco", punti: [
         "Vedi i dispositivi dove hai il PIN e togli quelli che non usi più.",
         "«Blocca» chiude subito la sessione. Dopo i minuti di inattività scelti dal titolare l'app si blocca da sola.",
+        "Un collaboratore che ha perso password e telefono? Il titolare gli reimposta la password da Impostazioni → Utenti: la verifica in due passaggi si spegne e la riattiva lui.",
+      ] },
+    ],
+  },
+
+  profilo: {
+    titolo: "Il mio profilo",
+    intro: "Chi sei nell'app, i tuoi distintivi, le gocce di miele e gli inviti. Si apre toccando il tuo nome in basso nel menu.",
+    parti: [
+      { titolo: "Il menu del tuo nome", punti: [
+        "Da qui raggiungi Il mio profilo, Impostazioni (titolare), Accesso e PIN, Aggiungi un utente, Cambia utente e Blocca.",
+        "Sul telefono lo stesso menu è nell'avatar in alto e nel pulsante «Altro».",
+      ] },
+      { titolo: "Invita un collega", punti: [
+        "Hai un codice personale: mandalo con «Copia il link» o «Manda su WhatsApp».",
+        "Il collega che si iscrive con il tuo codice ha la prova gratuita doppia: 14 giorni di Max invece di 7.",
+        "Vedi solo quanti colleghi hai invitato, quanti hanno usato la prova e quanti hanno pagato: mai i loro dati.",
+      ] },
+      { titolo: "Gocce di miele", punti: [
+        "10 gocce quando un collega usa davvero la prova (almeno 10 movimenti), fino a 5 colleghi al mese.",
+        "100, 200 o 300 gocce quando il collega paga 3, 6 o 12 mesi.",
+        "100 gocce valgono 1 mese gratis del tuo piano, al massimo 12 mesi all'anno.",
+      ] },
+      { titolo: "Distintivi", punti: [
+        "I livelli dell'alveare crescono con i colleghi che pagano: Ape operaia (1), esploratrice (3), guardiana (6), regina (10). Il livello raggiunto non si perde.",
+        "Ape fondatrice: i primi 100 abbonati ricevono il loro numero, da 001 a 100, e tengono il prezzo di lancio per sempre.",
       ] },
     ],
   },
 };
 
 // Ordine in cui le guide compaiono nella pagina «Guida» del sito.
-export const ORDINE_GUIDE = ['primi_passi', 'bilancio', 'movimenti', 'assistente', 'scadenze', 'clienti', 'agenda', 'progetti', 'riparazioni', 'magazzino', 'impostazioni', 'accesso'];
+export const ORDINE_GUIDE = ['primi_passi', 'bilancio', 'movimenti', 'assistente', 'scadenze', 'clienti', 'agenda', 'progetti', 'riparazioni', 'magazzino', 'impostazioni', 'accesso', 'profilo'];
