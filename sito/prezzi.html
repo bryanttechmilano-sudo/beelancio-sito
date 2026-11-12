@@ -92,25 +92,43 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Confronto dei piani</h2>
+          <p class="muted">Tutto quello che c'è in ogni piano, diviso per argomento. Sicurezza e i tuoi dati sono uguali per tutti.</p>
         </div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th></th><th>Free</th><th>Pro</th><th>Max</th></tr></thead>
+        <div class="table-wrap compare-wrap">
+          <table class="compare">
+            <colgroup><col><col><col class="hl"><col></colgroup>
+            <thead><tr><th scope="col"><span class="sr-only">Funzione</span></th><th scope="col">Free</th><th scope="col">Pro <span class="tag-mini">il più scelto</span></th><th scope="col">Max</th></tr></thead>
             <tbody>
-              <tr><td>Utenti</td><td>1</td><td>titolare + 2 collaboratori</td><td>fino a 10</td></tr>
-              <tr><td>Attività</td><td>2</td><td>illimitate</td><td>illimitate</td></tr>
-              <tr><td>Conti</td><td>3</td><td>illimitati</td><td>illimitati</td></tr>
-              <tr><td>Movimenti</td><td>100 al mese</td><td>illimitati</td><td>illimitati</td></tr>
-              <tr><td>Scadenze</td><td>5</td><td>illimitate</td><td>illimitate</td></tr>
-              <tr><td>Progetti e Agenda</td><td class="yes">sì</td><td class="yes">sì</td><td class="yes">sì</td></tr>
-              <tr><td>Riparazioni e Magazzino</td><td class="no">no</td><td class="yes">sì</td><td class="yes">sì</td></tr>
-              <tr><td>Importazione estratto conto</td><td class="no">no</td><td class="yes">sì</td><td class="yes">sì</td></tr>
-              <tr><td>Permessi per attività</td><td class="no">no</td><td class="yes">sì</td><td class="yes">sì</td></tr>
-              <tr><td>Assistente IA</td><td class="no">no</td><td class="no">no</td><td class="yes">sì</td></tr>
-              <tr><td>Portale clienti</td><td class="no">no</td><td class="no">no</td><td class="yes">sì</td></tr>
-              <tr><td>Esportazione e copie dei dati</td><td class="yes">sì</td><td class="yes">sì</td><td class="yes">sì</td></tr>
-              <tr><td>Verifica in due passaggi</td><td class="yes">sì</td><td class="yes">sì</td><td class="yes">sì</td></tr>
-              <tr><td>Assistenza</td><td>guida e video</td><td>email</td><td>email con priorità</td></tr>
+              <tr class="grp"><th colspan="4" scope="rowgroup">Quanto puoi usarlo</th></tr>
+              <tr><th scope="row">Utenti</th><td>1</td><td>titolare + 2 collaboratori</td><td>fino a 10</td></tr>
+              <tr><th scope="row">Attività</th><td>2</td><td>illimitate</td><td>illimitate</td></tr>
+              <tr><th scope="row">Conti</th><td>3</td><td>illimitati</td><td>illimitati</td></tr>
+              <tr><th scope="row">Movimenti</th><td>100 al mese</td><td>illimitati</td><td>illimitati</td></tr>
+              <tr><th scope="row">Scadenze che si ripetono</th><td>5</td><td>illimitate</td><td>illimitate</td></tr>
+            </tbody>
+            <tbody>
+              <tr class="grp"><th colspan="4" scope="rowgroup">Sezioni dell'app</th></tr>
+              <tr><th scope="row">Bilancio, Movimenti, Clienti</th><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td></tr>
+              <tr><th scope="row">Progetti e Agenda</th><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td></tr>
+              <tr><th scope="row">Riparazioni e Magazzino</th><td class="no">—<span class="sr-only">no</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td></tr>
+              <tr><th scope="row">Importazione dell'estratto conto</th><td class="no">—<span class="sr-only">no</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td></tr>
+              <tr><th scope="row">Collaboratori limitati ad alcune attività</th><td class="no">—<span class="sr-only">no</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td></tr>
+              <tr><th scope="row">Assistente IA: scrivi a parole, registri con un tocco</th><td class="no">—<span class="sr-only">no</span></td><td class="no">—<span class="sr-only">no</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td></tr>
+              <tr><th scope="row">Portale clienti <span class="tag-mini soon">in arrivo</span></th><td class="no">—<span class="sr-only">no</span></td><td class="no">—<span class="sr-only">no</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td></tr>
+            </tbody>
+            <tbody>
+              <tr class="grp"><th colspan="4" scope="rowgroup">Sicurezza e dati, per tutti</th></tr>
+              <tr><th scope="row">Accesso con email o con nome utente</th><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td></tr>
+              <tr><th scope="row">Verifica in due passaggi e codici di recupero</th><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td></tr>
+              <tr><th scope="row">PIN rapido sui tuoi dispositivi</th><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td></tr>
+              <tr><th scope="row">Esportazione per Excel e «Scarica tutti i miei dati»</th><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td></tr>
+              <tr><th scope="row">Copia dei dati ogni giorno</th><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td></tr>
+            </tbody>
+            <tbody>
+              <tr class="grp"><th colspan="4" scope="rowgroup">Aiuto e premi</th></tr>
+              <tr><th scope="row">Guida dentro l'app e domande frequenti</th><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td></tr>
+              <tr><th scope="row">Assistenza</th><td>guida e video</td><td>email</td><td>email con priorità</td></tr>
+              <tr><th scope="row">Invita un collega: gocce di miele e mesi gratis</th><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td><td class="yes"><span data-icon="check" data-size="18"></span><span class="sr-only">sì</span></td></tr>
             </tbody>
           </table>
         </div>
@@ -132,7 +150,12 @@
         <p class="small muted space-top">Percentuali indicative, definitive al lancio. Il rinnovo è automatico e ti avvisiamo 7 giorni prima.</p>
         <div class="callout space-top">
           <h3>Api fondatrici</h3>
-          <p>I <strong>primi 100 abbonati</strong> tengono il prezzo di lancio <strong>per sempre</strong>, anche se poi aumenta, e hanno il distintivo «Ape fondatrice». Il prezzo resta bloccato finché l'abbonamento non si interrompe.</p>
+          <p>I <strong>primi 100 abbonati</strong> tengono il prezzo di lancio <strong>per sempre</strong>, anche se poi aumenta, e hanno il distintivo «Ape fondatrice» con il loro numero, da 001 a 100. Il prezzo resta bloccato finché l'abbonamento non si interrompe.</p>
+          <div class="founders" data-fondatrici>
+            <div class="founders-n">Posti liberi: <b data-liberi>100</b> su <span data-totale>100</span></div>
+            <div class="bar" role="progressbar" aria-label="Posti da Ape fondatrice già presi" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="w" data-presi></span></div>
+            <p class="small muted">Il contatore parte all'apertura degli abbonamenti.</p>
+          </div>
         </div>
       </div>
     </section>

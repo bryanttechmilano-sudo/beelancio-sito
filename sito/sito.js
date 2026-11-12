@@ -35,6 +35,19 @@ for (const faq of document.querySelectorAll('.faq')) {
   }, true); // «toggle» non risale: si ascolta in fase di cattura
 }
 
+// Api fondatrici: posti rimasti (il numero sta in fondatrici.json, aggiornato all'apertura degli abbonamenti)
+const founders = document.querySelector('[data-fondatrici]');
+if (founders) {
+  fetch('fondatrici.json', { cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).then((d) => {
+    if (!d || !Number.isInteger(d.totale) || !Number.isInteger(d.presi)) return;
+    const liberi = Math.max(0, d.totale - d.presi);
+    founders.querySelector('[data-liberi]').textContent = String(liberi);
+    founders.querySelector('[data-totale]').textContent = String(d.totale);
+    founders.querySelector('[data-presi]').style.width = Math.round((d.presi / d.totale) * 100) + '%';
+    founders.querySelector('[role="progressbar"]').setAttribute('aria-valuenow', String(d.presi));
+  }).catch(() => {});
+}
+
 // Anno nel piè di pagina
 for (const el of document.querySelectorAll('[data-anno]')) el.textContent = String(new Date().getFullYear());
 

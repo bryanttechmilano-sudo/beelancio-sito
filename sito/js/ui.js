@@ -269,6 +269,13 @@ export function seg(options, value, onChange, cls = '') {
   };
   render(value);
   wrap.setValue = render;
+  // se la barra scorre di lato, la scelta attiva resta in vista (dopo un cambio di pagina ripartirebbe da capo)
+  const showActive = () => {
+    const on = wrap.querySelector('.on');
+    if (!on || !wrap.isConnected || wrap.scrollWidth <= wrap.clientWidth) return;
+    wrap.scrollLeft += on.getBoundingClientRect().left - wrap.getBoundingClientRect().left - (wrap.clientWidth - on.offsetWidth) / 2;
+  };
+  requestAnimationFrame(() => requestAnimationFrame(showActive));
   return wrap;
 }
 export function empty(title, sub, action) { return h('div', { class: 'empty' }, h('strong', {}, title), sub ? h('div', {}, sub) : null, action || null); }
@@ -306,9 +313,11 @@ export function placeFloating(anchor, el, { align = 'end', matchWidth = false } 
 }
 
 // Menu a tendina per le azioni di una riga (i «tre puntini»).
-export function menuButton(items, label = 'Azioni') {
+// trigger: un pulsante già pronto al posto dei tre puntini (per esempio il nome dell'utente); align: 'end' o 'start'
+export function menuButton(items, label = 'Azioni', { trigger = null, align = 'end' } = {}) {
   const wrap = h('div', { class: 'rel' });
-  const btn = h('button', { class: 'icon-btn', type: 'button', 'aria-label': label, 'aria-haspopup': 'menu', 'aria-expanded': 'false' }, icon('more'));
+  const btn = trigger || h('button', { class: 'icon-btn', type: 'button', 'aria-label': label }, icon('more'));
+  btn.setAttribute('aria-haspopup', 'menu'); btn.setAttribute('aria-expanded', 'false');
   let open = null;
   const buttons = () => (open ? [...open.querySelectorAll('button')] : []);
   const closeMenu = (focusBack = false) => {
@@ -345,7 +354,7 @@ export function menuButton(items, label = 'Azioni') {
     open = h('div', { class: 'menu floating', role: 'menu', 'aria-label': label }, items.filter(Boolean).map((it) => h('button', { type: 'button', role: 'menuitem', class: it.danger ? 'danger' : '',
       onclick: (ev) => { ev.stopPropagation(); ev.preventDefault(); closeMenu(); it.onclick(); } }, it.icon ? icon(it.icon, 16) : null, it.label)));
     document.body.append(open);
-    placeFloating(btn, open);
+    placeFloating(btn, open, { align });
     btn.setAttribute('aria-expanded', 'true');
     document.addEventListener('mousedown', outside, true);
     document.addEventListener('keydown', onKey, true);
