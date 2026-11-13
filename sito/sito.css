@@ -2,7 +2,7 @@
 :root {
   --bg: #fbf8f1; --surface: #ffffff; --surface-2: #f5efe2; --surface-3: #ece4d2;
   --text: #1f1a12; --muted: #6b6252; --border: #e4dbc7;
-  --accent: #f5a800; --accent-hover: #e39a00; --accent-ink: #1f1a12; --accent-text: #9a6400; --accent-soft: #fdf0cc;
+  --accent: #f5a800; --accent-hover: #e39a00; --accent-ink: #1f1a12; --accent-text: #8a5a00; --accent-soft: #fdf0cc;
   --ok: #1b7f4f; --ok-soft: #dff3e8; --err: #c0352b; --err-soft: #fbe3e0; --info: #2b66c4; --info-soft: #e1ecfb;
   --shadow: 0 1px 2px rgba(60, 45, 10, .06), 0 10px 30px rgba(60, 45, 10, .09);
   --radius: 16px; --radius-s: 10px;
