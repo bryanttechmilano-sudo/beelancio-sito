@@ -48,6 +48,27 @@ if (founders) {
   }).catch(() => {});
 }
 
+// Galleria «Com'è fatta»: i pulsanti cambiano la schermata grande
+const gallery = document.querySelector('[data-gallery]');
+if (gallery) {
+  const ALT = {
+    bilancio: 'Il Bilancio di Beelancio: saldi dei conti e guadagni e spese del mese per attività',
+    movimenti: 'I Movimenti: entrate, uscite e trasferimenti con ricerca e filtri',
+    assistente: 'L\'assistente: una frase diventa un movimento già compilato da confermare',
+    riparazioni: 'Le Riparazioni: oggetti ricevuti, stato del lavoro e soldi da incassare',
+    agenda: 'L\'Agenda degli appuntamenti con i clienti',
+    profilo: 'Il profilo: distintivi, gocce di miele e invita un collega',
+  };
+  const main = gallery.querySelector('[data-main]');
+  for (const b of gallery.querySelectorAll('[data-shot]')) {
+    b.addEventListener('click', () => {
+      for (const x of gallery.querySelectorAll('[data-shot]')) x.setAttribute('aria-selected', String(x === b));
+      main.src = `img/app-${b.dataset.shot}.webp`;
+      main.alt = ALT[b.dataset.shot] || '';
+    });
+  }
+}
+
 // Anno nel piè di pagina
 for (const el of document.querySelectorAll('[data-anno]')) el.textContent = String(new Date().getFullYear());
 
