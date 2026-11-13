@@ -15,10 +15,11 @@ if (btn && menu) {
   menu.addEventListener('click', (e) => { if (e.target.closest('a')) { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
 }
 
-// Pagina attuale evidenziata nel menu
-const here = location.pathname.split('/').pop() || 'index.html';
+// Pagina attuale evidenziata nel menu (in locale i link sono «prezzi.html», online «/prezzi»)
+const pageOf = (s) => String(s).split('#')[0].split('?')[0].replace(/^.*\//, '').replace(/\.html$/, '').replace(/^index$/, '');
+const here = pageOf(location.pathname);
 for (const a of document.querySelectorAll('.menu a:not(.btn)')) {
-  if (a.getAttribute('href') === here) a.setAttribute('aria-current', 'page');
+  if (pageOf(a.getAttribute('href')) === here) a.setAttribute('aria-current', 'page');
 }
 
 // Icone: <span data-icon="nome" data-size="20"></span>
