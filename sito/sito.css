@@ -168,6 +168,14 @@ td:first-child { font-weight: 600; }
 .compare tbody tr:last-child td, .compare tbody tr:last-child th { border-bottom: 1px solid var(--border); }
 .tag-mini { display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 999px; font-size: .7rem; font-weight: 700; background: var(--accent); color: var(--accent-ink); vertical-align: middle; }
 .tag-mini.soon { background: var(--info-soft); color: var(--info); }
+/* Riquadro «Tutti i dettagli» che si apre */
+details.more { border: 1px solid var(--border); border-radius: 14px; padding: 4px 18px 16px; background: var(--surface); }
+details.more > summary { cursor: pointer; font-weight: 650; padding: 12px 0; color: var(--accent-text); }
+details.more[open] > summary { margin-bottom: 8px; }
+/* Barra «Anteprima» in cima alle pagine pubbliche (prima del lancio) */
+.preview-bar { background: var(--accent-soft); color: var(--accent-text); text-align: center; font-size: .88rem; font-weight: 650; padding: 7px 14px; border-bottom: 1px solid var(--border); }
+/* Schermate dentro la pagina Funzioni */
+.feature-shot { width: 100%; height: auto; display: block; margin-top: 12px; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 14px 30px -20px rgba(0, 0, 0, .35); }
 /* Galleria «Com'è fatta» */
 .gallery { display: flex; flex-direction: column; gap: 16px; }
 .gallery-tabs { display: flex; gap: 6px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }

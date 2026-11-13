@@ -75,7 +75,8 @@ for (const el of document.querySelectorAll('[data-anno]')) el.textContent = Stri
 // Pagina «Guida»: indice e una sezione per ogni guida
 const box = document.getElementById('guide');
 const toc = document.getElementById('toc');
-if (box && toc) {
+// (nella copia pubblicata le sezioni sono già scritte nella pagina: qui si costruiscono solo se mancano)
+if (box && toc && !box.children.length) {
   const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; };
   for (const key of ORDINE_GUIDE) {
     const g = GUIDE[key];

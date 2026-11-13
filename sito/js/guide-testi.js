@@ -335,7 +335,7 @@ export const GUIDE = {
       ] },
       { titolo: "Distintivi", punti: [
         "I livelli dell'alveare crescono con i colleghi che pagano: Ape operaia (1), esploratrice (3), guardiana (6), regina (10). Il livello raggiunto non si perde.",
-        "Ape fondatrice: i primi 100 abbonati ricevono il loro numero, da 001 a 100, e tengono il prezzo di lancio per sempre.",
+        "Ape fondatrice: i primi 100 abbonati ricevono il loro numero, da 001 a 100, e tengono il prezzo di lancio finché restano abbonati, anche se poi aumenta.",
       ] },
     ],
   },
