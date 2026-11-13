@@ -178,6 +178,14 @@ export const GUIDE = {
         "Quando registri un movimento, un progetto, una riparazione o un appuntamento, collega il cliente: così ritrovi tutto in un punto.",
         "Un cliente con cui non lavori più si archivia: resta nello storico ma non ingombra l'elenco.",
       ] },
+      { titolo: "Il portale del cliente (modulo «Portale clienti»)", punti: [
+        "Si accende in Impostazioni → Moduli. Poi, nella scheda del cliente, «Crea il link» prepara un link personale solo suo.",
+        "Mandaglielo con «Copia il link», «Manda su WhatsApp» o per email: aprendolo vede le sue riparazioni, i suoi lavori, i prossimi appuntamenti e i pagamenti, sempre aggiornati e senza password.",
+        "Non vede mai note, note tecniche, seriale, ricambi e spese, conti usati, le descrizioni dei movimenti o altri clienti. L'elenco preciso è in «Cosa vede il cliente».",
+        "Il link si vede solo quando lo crei: se lo perdi, «Crea un link nuovo» (quello vecchio smette subito di funzionare). «Disattiva» lo spegne del tutto.",
+        "Nella scheda vedi da quando il link è attivo e quante volte il cliente l'ha aperto. Il link lo crea e lo disattiva solo il titolare.",
+        "Funziona per i clienti quando Beelancio è online; sul tuo PC puoi già aprirlo tu per vedere che cosa vedranno.",
+      ] },
     ],
   },
 
