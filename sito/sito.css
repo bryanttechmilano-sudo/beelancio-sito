@@ -60,7 +60,7 @@ img, svg { display: block; flex: none; }
 /* ---------- Testata ---------- */
 .top { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
 .top-in { display: flex; align-items: center; gap: 16px; min-height: 64px; }
-.logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 780; font-size: 1.2rem; letter-spacing: -.02em; color: var(--text); text-decoration: none; }
+.logo { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-weight: 780; font-size: 1.2rem; letter-spacing: -.02em; color: var(--text); text-decoration: none; }
 .logo img { width: 32px; height: 32px; border-radius: 9px; }
 .menu { display: flex; align-items: center; gap: 4px; margin-left: auto; }
 .menu a:not(.btn) { color: var(--text); text-decoration: none; font-weight: 560; padding: 8px 11px; border-radius: 9px; }
@@ -180,7 +180,7 @@ details.more[open] > summary { margin-bottom: 8px; }
 .gallery { display: flex; flex-direction: column; gap: 16px; }
 .gallery-tabs { display: flex; gap: 6px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
 .gallery-tabs::-webkit-scrollbar { display: none; }
-.gallery-tabs button { flex: none; border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 999px; padding: 8px 14px; font: inherit; font-weight: 600; cursor: pointer; }
+.gallery-tabs button { flex: none; min-height: 44px; border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 999px; padding: 8px 14px; font: inherit; font-weight: 600; cursor: pointer; }
 .gallery-tabs button[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 .gallery-row { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 22px; align-items: center; }
 .gallery figure { margin: 0; display: flex; flex-direction: column; gap: 8px; align-items: center; }
@@ -271,6 +271,12 @@ details.more[open] > summary { margin-bottom: 8px; }
   .menu.open { display: flex; }
   .menu a:not(.btn) { padding: 11px 12px; }
   .menu .btn { margin: 6px 0 0; }
+  .btn.small { min-height: 44px; }
+  /* sul telefono ogni link si tocca comodamente: almeno 44 px di altezza */
+  .foot nav { gap: 0 22px; }
+  .foot nav a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; }
+  .toc a { display: inline-flex; align-items: center; min-height: 44px; }
+  .skip { min-height: 44px; display: inline-flex; align-items: center; }
   .section { padding: 52px 0; }
   .grid.g2, .grid.g3, .grid.g4, .plans { grid-template-columns: 1fr; }
   .plans { gap: 26px; }
