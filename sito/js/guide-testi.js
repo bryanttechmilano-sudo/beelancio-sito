@@ -338,7 +338,7 @@ export const GUIDE = {
       ] },
       { titolo: "Gocce di miele", punti: [
         "10 gocce quando un collega usa davvero la prova (almeno 10 movimenti), fino a 5 colleghi al mese.",
-        "100, 200 o 300 gocce quando il collega paga 3, 6 o 12 mesi.",
+        "Quando il collega paga: 300 gocce se sceglie l'annuale; con il mensile 100 al 3° mese pagato e altre 200 al 12°. Al massimo 300 per collega.",
         "100 gocce valgono 1 mese gratis del tuo piano, al massimo 12 mesi all'anno.",
       ] },
       { titolo: "Distintivi", punti: [
