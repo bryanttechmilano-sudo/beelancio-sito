@@ -183,6 +183,7 @@ export const GUIDE = {
         "Mandaglielo con «Copia il link», «Manda su WhatsApp» o per email: aprendolo vede le sue riparazioni, i suoi lavori, i prossimi appuntamenti e i pagamenti, sempre aggiornati e senza password.",
         "Non vede mai note, note tecniche, seriale, ricambi e spese, conti usati, le descrizioni dei movimenti o altri clienti. L'elenco preciso è in «Cosa vede il cliente».",
         "Il link si vede solo quando lo crei: se lo perdi, «Crea un link nuovo» (quello vecchio smette subito di funzionare). «Disattiva» lo spegne del tutto.",
+        "Il link vale 90 giorni, oppure il tempo che scegli in «Vale per» (30 giorni, 6 mesi, 1 anno o «Non scade»). Scaduto, il cliente non lo apre più: «Prolunga lo stesso link» lo fa ripartire senza mandarne uno nuovo.",
         "Nella scheda vedi da quando il link è attivo e quante volte il cliente l'ha aperto. Il link lo crea e lo disattiva solo il titolare.",
         "Funziona per i clienti quando Beelancio è online; sul tuo PC puoi già aprirlo tu per vedere che cosa vedranno.",
       ] },
@@ -317,6 +318,7 @@ export const GUIDE = {
       ] },
       { titolo: "Dispositivi e blocco", punti: [
         "Vedi i dispositivi dove hai il PIN e togli quelli che non usi più.",
+        "Telefono perso o entrato da un PC non tuo? «Esci da tutti gli altri dispositivi» chiude Beelancio ovunque tranne qui e toglie il PIN dagli altri dispositivi. Serve la password.",
         "«Blocca» chiude subito la sessione. Dopo i minuti di inattività scelti dal titolare l'app si blocca da sola.",
         "Un collaboratore che ha perso password e telefono? Il titolare gli reimposta la password da Impostazioni → Utenti: la verifica in due passaggi si spegne e la riattiva lui.",
       ] },
@@ -328,7 +330,8 @@ export const GUIDE = {
     intro: "Chi sei nell'app, i tuoi distintivi, le gocce di miele e gli inviti. Si apre toccando il tuo nome in basso nel menu.",
     parti: [
       { titolo: "Il menu del tuo nome", punti: [
-        "Da qui raggiungi Il mio profilo, Impostazioni (titolare), Accesso e PIN, Aggiungi un utente, Cambia utente e Blocca.",
+        "Da qui raggiungi Il mio profilo, Impostazioni (titolare), Accesso e PIN, Aggiungi un utente, Segnala un problema, Cambia utente e Blocca.",
+        "«Segnala un problema» apre un'email a info@beelancio.it con la versione dell'app e la pagina in cui sei: scrivi cosa è successo. Non metterci password o dati dei tuoi clienti.",
         "Sul telefono lo stesso menu è nell'avatar in alto e nel pulsante «Altro».",
       ] },
       { titolo: "Invita un collega", punti: [
