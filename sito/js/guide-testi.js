@@ -331,7 +331,7 @@ export const GUIDE = {
     parti: [
       { titolo: "Il menu del tuo nome", punti: [
         "Da qui raggiungi Il mio profilo, Impostazioni (titolare), Accesso e PIN, Aggiungi un utente, Segnala un problema, Cambia utente e Blocca.",
-        "«Segnala un problema» apre un'email a info@beelancio.it con la versione dell'app e la pagina in cui sei: scrivi cosa è successo. Non metterci password o dati dei tuoi clienti.",
+        "«Segnala un problema» apre un modulo: scegli «Un problema» o «Un'idea», scrivi cosa è successo e premi «Manda». Arriva a chi fa Beelancio insieme alla pagina in cui sei, senza bisogno di un programma di posta. Non metterci password o dati dei tuoi clienti.",
         "Sul telefono lo stesso menu è nell'avatar in alto e nel pulsante «Altro».",
       ] },
       { titolo: "Invita un collega", punti: [
