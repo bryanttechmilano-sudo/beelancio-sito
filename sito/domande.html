@@ -14,7 +14,7 @@
 </head>
 <body>
   <a class="skip" href="#contenuto">Vai al contenuto</a>
-  <div class="preview-bar" role="note">Anteprima: Beelancio è in prova privata. Le iscrizioni aprono al lancio.</div>
+  <div class="preview-bar" role="note" data-prima>Anteprima: le iscrizioni aprono il 1° gennaio 2027. Chi partecipa alla prova entra da «Accedi».</div>
   <header class="top">
     <div class="wrap top-in">
       <a class="logo" href="/"><img src="icons/logo.svg" alt="" width="32" height="32"><span>Beelancio</span></a>
@@ -22,9 +22,11 @@
       <nav id="menu" class="menu" aria-label="Menu del sito">
         <a href="/funzioni">Funzioni</a>
         <a href="/prezzi">Prezzi</a>
+        <a href="/installa">Installa</a>
         <a href="/guida">Guida</a>
         <a href="/domande">Domande</a>
-        <a class="btn small primary" href="mailto:info@beelancio.it?subject=Avvisami%20all'apertura%20di%20Beelancio&amp;body=Ciao%2C%20vorrei%20essere%20avvisato%20quando%20apre%20Beelancio.%0AIl%20mio%20lavoro%3A%20">Avvisami al lancio</a>
+        <a class="btn small ghost" href="https://app.beelancio.it">Accedi</a>
+        <a class="btn small primary" href="/#avvisami" data-iscriviti>Avvisami al lancio</a>
       </nav>
     </div>
   </header>
@@ -58,6 +60,8 @@
           <details><summary>Come devo scrivere all'assistente?</summary><div><p>Come lo racconteresti a un collega, una cosa per frase. Scrivi l'importo e come hai pagato («in contanti», «con la carta», «col bancomat») e, se hai più attività, per quale. Le date puoi dirle a parole: «ieri», «venerdì», «domani alle 15». I clienti scrivili con nome e cognome. Tutti i consigli sono nella <a href="/guida#g-assistente">guida dell'assistente</a>.</p></div></details>
           <details><summary>E se l'assistente sbaglia?</summary><div><p>Prima di registrare vedi ogni operazione e puoi correggere ogni campo; quello che ha scelto lui, perché non l'avevi detto, è segnato in giallo. Se anche una sola operazione non va, non si registra niente: così non restano mezze registrazioni.</p></div></details>
           <details><summary>Dove finisce quello che scrivo all'assistente?</summary><div><p>Il messaggio viene mandato ad Anthropic, l'azienda che fa Claude, solo per essere capito. Insieme al messaggio vanno i nomi delle tue attività, dei conti, delle categorie e degli articoli, per capire a cosa ti riferisci; l'elenco dei tuoi clienti non viene mandato. Beelancio non salva il testo che scrivi. Non scrivere dati che non servono, come password o codici.</p></div></details>
+          <details><summary>Quando posso iscrivermi?</summary><div><p>Le iscrizioni aprono il <strong>1° gennaio 2027 a mezzanotte</strong>, da sole. Fino ad allora entra solo chi partecipa alla prova, con il codice personale che gli abbiamo mandato. Se vuoi un'email quando apriamo, usa «Avvisami all'apertura» nella <a href="/#avvisami">pagina principale</a>.</p></div></details>
+          <details><summary>Posso importare l'estratto conto della mia banca?</summary><div><p>Sì: il file CSV dell'home banking oppure direttamente il PDF dell'estratto conto. Con il PDF Beelancio trova anche il saldo iniziale e controlla che il saldo finale torni con quello della banca. I PDF fatti da una foto o da una scansione non si possono leggere.</p></div></details>
           <details><summary>Posso provarlo prima di pagare?</summary><div><p>Sì: all'iscrizione hai 7 giorni di Max gratis, senza carta. Poi puoi restare sul Free quanto vuoi.</p></div></details>
         </div>
         <p class="muted space-top">Non trovi la risposta? Leggi la <a href="/guida">guida</a> o <a href="/contatti">scrivici</a>.</p>
@@ -70,7 +74,7 @@
       <div class="foot-col">
         <a class="logo" href="/"><img src="icons/logo.svg" alt="" width="28" height="28"><span>Beelancio</span></a>
         <p class="muted small">Il bilancio delle tue attività. Un progetto di Bryant Developer, © <span data-anno>2026</span>.</p>
-        <p class="notice">Anteprima del sito: Beelancio non è ancora aperto al pubblico.</p>
+        <p class="notice" data-prima>Le iscrizioni a Beelancio aprono il 1° gennaio 2027.</p>
       </div>
       <nav aria-label="Altre pagine">
         <a href="/funzioni">Funzioni</a><a href="/prezzi">Prezzi</a><a href="/installa">Installa</a><a href="/guida">Guida</a>

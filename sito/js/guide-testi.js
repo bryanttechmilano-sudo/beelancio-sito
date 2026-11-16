@@ -40,11 +40,13 @@ export const GUIDE = {
     parti: [
       { titolo: "Quanto hai adesso", punti: [
         "In cima vedi il saldo di ogni conto (contanti, banca, carte…) e il saldo generale.",
-        "Tocca un conto per vedere i suoi movimenti.",
-        "Se un saldo non torna con la realtà, controlla il saldo iniziale del conto in Impostazioni → Conti.",
+        "Tocca un conto per vedere i suoi movimenti. Sotto il saldo c'è la data dell'ultimo movimento: fa capire da quando mancano i dati.",
+        "Se un saldo non torna con la banca, usa «Allinea al saldo della banca»: scrivi il saldo che vedi adesso e Beelancio riparte da lì. Entrate, uscite e bilancio non cambiano.",
+        "Il saldo iniziale di ogni conto si può anche cambiare a mano in Impostazioni → Conti.",
+        "Devi mostrare lo schermo a qualcuno? L'occhio in alto nasconde tutti gli importi dell'app («•••,•• €»); toccalo di nuovo per rivederli.",
       ] },
       { titolo: "Guadagni e spese del periodo", punti: [
-        "Scegli Mese, Trimestre, Anno o Date; con le frecce vai al periodo prima o dopo.",
+        "Scegli Mese, Trimestre, Anno o Date; con le frecce vai al periodo prima o dopo. Se il periodo è vuoto, Beelancio ti dice quando è l'ultimo movimento e ti ci porta con un tocco.",
         "Con le caselle in alto scegli quali attività vedere: tutte, una o alcune.",
         "La tabella ha una colonna per ogni attività e il totale. Sotto vedi il confronto con il periodo precedente e le spese e le entrate per categoria.",
         "Tocca il nome di un'attività nella tabella per vedere i suoi movimenti.",
@@ -79,7 +81,9 @@ export const GUIDE = {
       { titolo: "Strumenti utili", punti: [
         "«Come registro…?»: i casi di tutti i giorni, con il modulo già impostato.",
         "«Assistente»: scrivi a parole che cosa è successo, anche più cose insieme («ho speso 2 € alle macchinette in contanti e 45 di benzina con la carta»). Ti prepara l'elenco già compilato da controllare e registrare con un tocco. Come scrivergli è spiegato nella guida «Assistente».",
-        "«Importa estratto conto»: scegli il file CSV scaricato dalla banca, controlli l'anteprima e importi tutto insieme. I movimenti già presenti sono segnalati e non spuntati.",
+        "«Importa estratto conto»: scegli il file CSV scaricato dalla banca oppure l'estratto conto in PDF, controlli l'anteprima e importi tutto insieme. I movimenti già presenti sono segnalati e non spuntati. I PDF fatti da una foto o da una scansione non si possono leggere.",
+        "Se il conto non ha ancora un saldo di partenza, durante l'importazione scrivi il «Saldo iniziale» dell'estratto conto (con il PDF lo trova da solo). Alla fine Beelancio ti mostra il saldo all'ultimo giorno dell'estratto, da confrontare con quello della banca (con il PDF il confronto lo fa lui), e il pulsante «Vedi i movimenti importati».",
+        "La pagina parte da «Questo mese»: se è vuoto ma hai movimenti in altri periodi (per esempio un estratto conto dei mesi passati), te lo dice e li mostri con «Vedi tutti i movimenti».",
         "«Esporta»: un file per Excel con i movimenti che vedi, da dare al commercialista.",
         "Nei trasferimenti, «Commissione pagata» registra anche la spesa della commissione (per esempio la ricarica al tabaccaio).",
       ] },
@@ -88,7 +92,7 @@ export const GUIDE = {
         "Un prelievo o un versamento segnato per errore come uscita o entrata? Aprilo e usa «Era un trasferimento». Il titolare trova tutti i casi in «Sistema prelievi e versamenti».",
       ] },
     ],
-    consiglio: "Sul telefono il pulsante + in basso apre subito un nuovo movimento.",
+    consiglio: "Sul telefono il pulsante + in basso apre subito un nuovo movimento. Per trovare qualcosa in tutta l'app (un cliente, un movimento, un importo come «45,50») usa «Cerca» nella barra a sinistra o premi Ctrl+K; sul telefono c'è la lente in alto.",
   },
 
   assistente: {
@@ -162,6 +166,29 @@ export const GUIDE = {
         "Vedi quanto spendi e quanto incassi di fisso ogni mese.",
       ] },
     ],
+  },
+
+  risparmi: {
+    titolo: "Risparmi",
+    intro: "I soldi che metti da parte per i tuoi obiettivi: vacanze, un PC nuovo, un fondo per le emergenze.",
+    parti: [
+      { titolo: "Gli obiettivi", punti: [
+        "«Nuovo obiettivo»: scrivi per cosa stai risparmiando e, se vuoi, quanto ti serve ed entro quando.",
+        "Ogni obiettivo mostra quanto hai messo da parte, quanto manca e la barra di avanzamento. Con una data, ti dice anche circa quanto mettere da parte ogni mese.",
+        "Dal menu ⋮ lo modifichi, vedi la sua storia, lo archivi quando hai finito o lo elimini.",
+      ] },
+      { titolo: "Aggiungere e togliere", punti: [
+        "«Aggiungi»: i soldi che metti da parte. «Togli»: quelli che usi o sposti. Non si può togliere più di quanto c'è.",
+        "I soldi restano nei tuoi conti: qui li etichetti per sapere a cosa servono. Non sono spese e non cambiano il bilancio.",
+        "Se poi li spendi davvero, registra anche l'uscita in Movimenti.",
+        "In «Quanto hai adesso» vedi quanto del saldo è messo da parte e quanto è libero.",
+      ] },
+      { titolo: "L'occhio", punti: [
+        "L'occhio in alto (accanto al logo sul computer, accanto al tuo nome sul telefono) nasconde gli importi in tutta l'app: al posto delle cifre compare «•••,•• €». Utile quando mostri lo schermo a qualcuno.",
+        "Toccalo di nuovo per rivederli. La scelta resta su questo dispositivo.",
+      ] },
+    ],
+    consiglio: "Si accende in Impostazioni → Moduli → Risparmi.",
   },
 
   clienti: {
@@ -353,4 +380,4 @@ export const GUIDE = {
 };
 
 // Ordine in cui le guide compaiono nella pagina «Guida» del sito.
-export const ORDINE_GUIDE = ['primi_passi', 'bilancio', 'movimenti', 'assistente', 'scadenze', 'clienti', 'agenda', 'progetti', 'riparazioni', 'magazzino', 'impostazioni', 'accesso', 'profilo'];
+export const ORDINE_GUIDE = ['primi_passi', 'bilancio', 'movimenti', 'assistente', 'scadenze', 'risparmi', 'clienti', 'agenda', 'progetti', 'riparazioni', 'magazzino', 'impostazioni', 'accesso', 'profilo'];

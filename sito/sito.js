@@ -73,6 +73,65 @@ if (gallery) {
 // Anno nel piè di pagina
 for (const el of document.querySelectorAll('[data-anno]')) el.textContent = String(new Date().getFullYear());
 
+// Apertura delle iscrizioni: 1° gennaio 2027 alle 00:00, ora italiana. Prima: conto alla rovescia e «Avvisami»;
+// dopo (anche senza ricaricare la pagina): i pulsanti portano all'iscrizione. Il server apre da solo alla stessa ora.
+const LAUNCH = new Date('2027-01-01T00:00:00+01:00').getTime();
+const LOCAL = ['localhost', '127.0.0.1'].includes(location.hostname);
+const APP = LOCAL ? '' : 'https://app.beelancio.it';
+function showOpen() {
+  for (const el of document.querySelectorAll('[data-prima]')) el.hidden = true;
+  for (const el of document.querySelectorAll('[data-dopo]')) el.hidden = false;
+  // nella copia pubblica i pulsanti «Avvisami all'apertura» diventano «Iscriviti»
+  for (const a of document.querySelectorAll('a[data-iscriviti]')) {
+    a.href = APP || '../';
+    a.textContent = a.classList.contains('small') ? 'Iscriviti' : 'Iscriviti gratis';
+  }
+}
+if (Date.now() >= LAUNCH) showOpen();
+else {
+  const cd = document.querySelector('[data-countdown]');
+  const part = (k) => cd && cd.querySelector(`[data-cd="${k}"]`);
+  let timer = null;
+  const tick = () => {
+    const ms = LAUNCH - Date.now();
+    if (ms <= 0) { clearInterval(timer); showOpen(); return; }
+    if (!cd) return;
+    const s = Math.floor(ms / 1000);
+    part('giorni').textContent = String(Math.floor(s / 86400));
+    part('ore').textContent = String(Math.floor(s / 3600) % 24).padStart(2, '0');
+    part('minuti').textContent = String(Math.floor(s / 60) % 60).padStart(2, '0');
+    part('secondi').textContent = String(s % 60).padStart(2, '0');
+  };
+  tick();
+  timer = setInterval(tick, 1000);
+}
+
+// «Avvisami all'apertura»: l'email va al server di Beelancio, che manda subito un'email di conferma.
+const notifyForm = document.querySelector('form[data-avvisami]');
+if (notifyForm) {
+  const msg = notifyForm.querySelector('.notify-msg');
+  const say = (text, kind = '') => { msg.textContent = text; msg.className = 'notify-msg ' + kind; };
+  notifyForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const field = notifyForm.elements.email;
+    const email = field.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say('Scrivi un indirizzo email valido.', 'err'); field.focus(); return; }
+    const button = notifyForm.querySelector('button');
+    button.disabled = true;
+    say('Un momento…');
+    try {
+      const r = await fetch(APP + '/api/avvisami', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, sito_web: notifyForm.elements.sito_web.value }) });
+      const data = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error((data.error && data.error.message) || 'Qualcosa non ha funzionato: riprova più tardi.');
+      notifyForm.reset();
+      say('Fatto! Ti abbiamo mandato un\'email: apri il link e premi «Sì, avvisatemi» (se non la trovi, guarda nello spam).', 'ok');
+    } catch (err) {
+      say(err instanceof TypeError ? 'Non riusciamo a raggiungere Beelancio in questo momento: riprova tra poco.' : err.message, 'err');
+    } finally { button.disabled = false; }
+  });
+}
+
 // Pagina «Guida»: indice e una sezione per ogni guida
 const box = document.getElementById('guide');
 const toc = document.getElementById('toc');

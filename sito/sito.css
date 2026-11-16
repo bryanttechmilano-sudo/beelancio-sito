@@ -289,3 +289,22 @@ details.more[open] > summary { margin-bottom: 8px; }
 }
 @media (max-width: 420px) { .levels { grid-template-columns: 1fr; } .actions .btn { flex: 1 1 100%; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Conto alla rovescia dell'apertura (1° gennaio 2027) e modulo «Avvisami all'apertura» */
+[hidden] { display: none !important; }
+.wrap.narrow { max-width: 680px; }
+.countdown { margin: 18px 0 6px; padding: 14px 16px; border-radius: var(--radius); background: var(--accent-soft); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 10px; }
+.countdown-title { margin: 0; color: var(--text); }
+.countdown-n { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.countdown-n span { display: flex; flex-direction: column; align-items: center; padding: 8px 4px; border-radius: var(--radius-s); background: var(--surface); }
+.countdown-n b { font-size: 1.6rem; line-height: 1.1; font-variant-numeric: tabular-nums; color: var(--accent-text); }
+.countdown-n small { font-size: .78rem; color: var(--muted); }
+.notify-form { gap: 12px; }
+.notify-form label { font-weight: 600; }
+.notify-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.notify-input { flex: 1 1 240px; min-width: 0; min-height: 44px; padding: 10px 12px; font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-s); }
+.notify-input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.notify-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.notify-msg { margin: 0; min-height: 1.4em; }
+.notify-msg.ok { color: var(--ok); } .notify-msg.err { color: var(--err); }
+@media (max-width: 420px) { .countdown-n b { font-size: 1.3rem; } .notify-row .btn { flex: 1 1 100%; } }

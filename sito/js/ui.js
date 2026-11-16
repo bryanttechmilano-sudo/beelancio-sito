@@ -85,6 +85,8 @@ const ICONS = {
   hexagon: 'M12 2.5 20.5 7.5v9L12 21.5 3.5 16.5v-9z',
   gift: 'M4 11h16v10H4zM3 7h18v4H3zM12 7v14M12 7C10.5 4 7 3 7 5.5S10 7 12 7c1.5-3 5-4 5-1.5S14 7 12 7',
   wallet: 'M3 7a2 2 0 0 1 2-2h13v4M3 7v11a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1H5a2 2 0 0 1-2-2zM17 14.5h.01',
+  piggy: 'M18.5 6.5c-1.2 0-2.2.7-2.6 1.4C12.5 6.6 5 7.4 5 12.5c0 1.8.7 3 2 4.1V20h3.5v-1.8h3V20H17v-3.4c.9-.5 1.6-1.2 2-2.1h2v-4h-2c-.2-.8-.6-1.4-1-1.8zM2 10.5c0 1.2.9 2 2 2h1M15.5 11.5h.01',
+  plane: 'M10.5 19.5 12 21l1.5-1.5V15l7 3v-2l-7-5V5.5a1.5 1.5 0 0 0-3 0V11l-7 5v2l7-3z',
   bank: 'M3 10 12 4l9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 21h18',
   card: 'M3 6h18v12H3zM3 10h18M7 15h3',
   cash: 'M2 7h20v10H2zM12 14.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM6 10v4M18 10v4',
@@ -106,6 +108,8 @@ const ICONS = {
 export const ACTIVITY_ICONS = ['briefcase', 'code', 'laptop', 'phone', 'wrench', 'hammer', 'bolt', 'drop', 'palette', 'camera', 'music', 'scissors',
   'school', 'chat', 'cart', 'food', 'truck', 'leaf', 'paw', 'dumbbell', 'car', 'home', 'user', 'heart', 'star', 'book', 'gift', 'flame', 'bug', 'hexagon', 'euro'];
 export const WALLET_ICONS = { contanti: 'cash', conto: 'bank', carta: 'card', credito: 'card', altro: 'wallet' };
+// icone per gli obiettivi di risparmio (salvadanaio, vacanze, casa, auto…)
+export const SAVINGS_ICONS = ['piggy', 'plane', 'home', 'car', 'laptop', 'phone', 'gift', 'heart', 'star', 'school', 'book', 'paw', 'music', 'camera', 'food', 'dumbbell', 'briefcase', 'euro'];
 
 export function icon(name, size = 18) {
   const ns = 'http://www.w3.org/2000/svg';
@@ -119,7 +123,11 @@ export function icon(name, size = 18) {
 
 // ---- Soldi (sempre centesimi interi) ----
 const eurFmt = new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR', useGrouping: 'always' });
-export const eur = (cents) => (cents === null || cents === undefined ? '—' : eurFmt.format(Number(cents) / 100));
+// Con l'occhio chiuso (importi nascosti) ogni importo diventa «•••,•• €» (resta solo il segno): vale in tutta l'app.
+export const AMOUNT_MASK = '•••,•• €';
+export const eur = (cents) => (cents === null || cents === undefined ? '—'
+  : document.documentElement.classList.contains('hide-amounts') ? (Number(cents) < 0 ? '-' : '') + AMOUNT_MASK
+    : eurFmt.format(Number(cents) / 100));
 export const eurSigned = (cents) => (cents > 0 ? '+' : '') + eur(cents);
 export const centsToInput = (cents) => (cents === null || cents === undefined ? '' : (Number(cents) / 100).toFixed(2).replace('.', ','));
 // "12,50" | "12.5" | "1.200,00" -> 1250 ; null se vuoto, NaN se non valido. Nessun calcolo con decimali.
@@ -513,7 +521,7 @@ export function searchPicker({ placeholder, search, render, onPick, value = '' }
 
 // ---- Attività: colore, icona, etichette ----
 export const PALETTE = ['#f5a800', '#e2552d', '#c0352b', '#d6408f', '#8b5cf6', '#4f46e5', '#2b66c4', '#0e9aa7', '#1b7f4f', '#6b8e23', '#a0522d', '#6b6252'];
-const ICON_LABELS = { briefcase: 'Valigetta', code: 'Codice', laptop: 'Computer', phone: 'Telefono', wrench: 'Chiave inglese', home: 'Casa', user: 'Persona',
+const ICON_LABELS = { piggy: 'Salvadanaio', plane: 'Aereo (vacanze)', briefcase: 'Valigetta', code: 'Codice', laptop: 'Computer', phone: 'Telefono', wrench: 'Chiave inglese', home: 'Casa', user: 'Persona',
   heart: 'Cuore', star: 'Stella', cart: 'Carrello', book: 'Libro', camera: 'Fotocamera', car: 'Auto', gift: 'Regalo', flame: 'Fiamma', bug: 'Formica', hexagon: 'Alveare', euro: 'Euro',
   hammer: 'Martello', bolt: 'Fulmine (elettricità)', drop: 'Goccia (idraulica)', palette: 'Tavolozza (grafica)', music: 'Musica', scissors: 'Forbici',
   school: 'Cappello da laurea (formazione)', chat: 'Fumetto (consulenza)', food: 'Posate (ristorazione)', truck: 'Furgone (trasporti)', leaf: 'Foglia (giardinaggio)',
@@ -532,10 +540,10 @@ export function colorPicker(value = PALETTE[0]) {
   wrap.getValue = () => cur;
   return wrap;
 }
-export function iconPicker(value = 'briefcase') {
+export function iconPicker(value = 'briefcase', list = ACTIVITY_ICONS) {
   let cur = value;
   const wrap = h('div', { class: 'icon-grid', role: 'group' });
-  const draw = () => wrap.replaceChildren(...ACTIVITY_ICONS.map((n) => h('button', { type: 'button', class: 'icon-btn' + (n === cur ? ' on' : ''), 'aria-label': ICON_LABELS[n] || n, title: ICON_LABELS[n] || n,
+  const draw = () => wrap.replaceChildren(...list.map((n) => h('button', { type: 'button', class: 'icon-btn' + (n === cur ? ' on' : ''), 'aria-label': ICON_LABELS[n] || n, title: ICON_LABELS[n] || n,
     'aria-pressed': n === cur ? 'true' : 'false', onclick: () => { cur = n; draw(); } }, icon(n, 20))));
   draw();
   wrap.getValue = () => cur;
@@ -548,14 +556,48 @@ export function attName(a) { return a ? h('span', { class: 'row', color: a.color
 
 export const categoryLabel = (c) => (c ? c.name : 'Senza categoria');
 
+// ---- Importi nascosti (occhio) ----
+// Per mostrare lo schermo a qualcuno senza fargli vedere le cifre: eur() scrive «•••,•• €» al posto dell'importo.
+// La scelta vale su questo dispositivo (tema.js la applica subito all'apertura); l'app ridisegna la pagina («bee-importi»).
+export const amountsHidden = () => document.documentElement.classList.contains('hide-amounts');
+export function setAmountsHidden(on) {
+  document.documentElement.classList.toggle('hide-amounts', on);
+  try { if (on) localStorage.setItem('bee-nascondi', '1'); else localStorage.removeItem('bee-nascondi'); } catch { /* ignora */ }
+  for (const b of document.querySelectorAll('.eye-toggle')) if (b.redraw) b.redraw();
+  window.dispatchEvent(new CustomEvent('bee-importi', { detail: on }));
+}
+export function eyeToggle() {
+  const b = h('button', { class: 'icon-btn eye-toggle', type: 'button' });
+  b.redraw = () => {
+    const on = amountsHidden();
+    b.replaceChildren(icon(on ? 'eyeOff' : 'eye', 18));
+    b.title = on ? 'Mostra gli importi' : 'Nascondi gli importi';
+    b.setAttribute('aria-label', b.title); b.setAttribute('aria-pressed', on ? 'true' : 'false');
+  };
+  b.addEventListener('click', () => setAmountsHidden(!amountsHidden()));
+  b.redraw();
+  return b;
+}
+
 // ---- Tema ----
 export function getTheme() { return document.documentElement.dataset.theme || 'auto'; }
-export function setTheme(t) {
+// La barra della finestra (theme-color) segue il tema; con «Segui il sistema» ogni meta torna al suo colore (chiaro/scuro).
+const BAR = { chiaro: '#FBF8F1', scuro: '#14110B' };
+function themeBar(t) {
+  for (const m of document.querySelectorAll('meta[name="theme-color"]')) {
+    const media = m.getAttribute('media') || '';
+    m.setAttribute('content', BAR[t] || (media.includes('dark') ? BAR.scuro : BAR.chiaro));
+  }
+}
+// save: false quando il tema arriva dal profilo (non serve salvarlo di nuovo). L'app ascolta «bee-tema» e lo salva nel profilo.
+export function setTheme(t, { save = true } = {}) {
   if (t === 'chiaro' || t === 'scuro') document.documentElement.dataset.theme = t; else delete document.documentElement.dataset.theme;
+  themeBar(t);
   try { if (t === 'auto') localStorage.removeItem('bee-tema'); else localStorage.setItem('bee-tema', t); } catch { /* ignora */ }
+  if (save) window.dispatchEvent(new CustomEvent('bee-tema', { detail: t }));
 }
 // Scelta del tema con anteprima: tre riquadri (scuro, chiaro, segui il sistema). Si cambia solo da qui,
-// non da pulsanti che si possono toccare per sbaglio. La scelta resta salvata su questo dispositivo.
+// non da pulsanti che si possono toccare per sbaglio. La scelta resta su questo dispositivo e nel profilo dell'utente.
 const THEMES = [
   ['scuro', 'Tema scuro', 'Sfondo scuro, riposante di sera.'],
   ['chiaro', 'Tema chiaro', 'Sfondo chiaro, ideale di giorno.'],

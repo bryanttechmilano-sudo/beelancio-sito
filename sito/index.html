@@ -14,7 +14,7 @@
 </head>
 <body>
   <a class="skip" href="#contenuto">Vai al contenuto</a>
-  <div class="preview-bar" role="note">Anteprima: Beelancio è in prova privata. Le iscrizioni aprono al lancio.</div>
+  <div class="preview-bar" role="note" data-prima>Anteprima: le iscrizioni aprono il 1° gennaio 2027. Chi partecipa alla prova entra da «Accedi».</div>
   <header class="top">
     <div class="wrap top-in">
       <a class="logo" href="/"><img src="icons/logo.svg" alt="" width="32" height="32"><span>Beelancio</span></a>
@@ -22,9 +22,11 @@
       <nav id="menu" class="menu" aria-label="Menu del sito">
         <a href="/funzioni">Funzioni</a>
         <a href="/prezzi">Prezzi</a>
+        <a href="/installa">Installa</a>
         <a href="/guida">Guida</a>
         <a href="/domande">Domande</a>
-        <a class="btn small primary" href="mailto:info@beelancio.it?subject=Avvisami%20all'apertura%20di%20Beelancio&amp;body=Ciao%2C%20vorrei%20essere%20avvisato%20quando%20apre%20Beelancio.%0AIl%20mio%20lavoro%3A%20">Avvisami al lancio</a>
+        <a class="btn small ghost" href="https://app.beelancio.it">Accedi</a>
+        <a class="btn small primary" href="/#avvisami" data-iscriviti>Avvisami al lancio</a>
       </nav>
     </div>
   </header>
@@ -37,8 +39,19 @@
           <h1>Il bilancio di tutte le tue attività, in un posto solo.</h1>
           <p class="lead">Entrate, uscite, clienti, lavori e appuntamenti. Per chi ha un mestiere, un'attività o più di una, e vuole sapere sempre quanto guadagna davvero.</p>
           <div class="actions">
-            <a class="btn primary" href="mailto:info@beelancio.it?subject=Avvisami%20all'apertura%20di%20Beelancio&amp;body=Ciao%2C%20vorrei%20essere%20avvisato%20quando%20apre%20Beelancio.%0AIl%20mio%20lavoro%3A%20">Avvisami all'apertura</a>
-            <a class="btn" href="#com-e-fatta">Guarda com'è fatta</a>
+            <a class="btn primary" href="/#avvisami" data-iscriviti>Avvisami all'apertura</a>
+            <a class="btn" href="/installa"><span data-icon="download" data-size="18"></span>Installa l'app</a>
+            <a class="btn ghost" href="#com-e-fatta">Guarda com'è fatta</a>
+          </div>
+          <div class="countdown" data-countdown="2027-01-01T00:00:00+01:00" aria-live="off">
+            <p class="countdown-title" data-prima>Le iscrizioni aprono il <b>1° gennaio 2027</b> alle 00:00</p>
+            <p class="countdown-title" data-dopo hidden><b>Beelancio è aperto!</b> Puoi iscriverti adesso.</p>
+            <div class="countdown-n" data-prima>
+              <span><b data-cd="giorni">–</b><small>giorni</small></span>
+              <span><b data-cd="ore">–</b><small>ore</small></span>
+              <span><b data-cd="minuti">–</b><small>minuti</small></span>
+              <span><b data-cd="secondi">–</b><small>secondi</small></span>
+            </div>
           </div>
           <div class="hero-note">
             <span><span data-icon="check" data-size="16"></span>Senza carta di credito</span>
@@ -197,8 +210,32 @@
         </div>
         <div class="plans">
           <div class="plan"><h3>Free</h3><p class="price"><b>0 €</b> per sempre</p><p class="muted">Per chi prova o lavora poco.</p><a class="btn" href="/prezzi">Dettagli</a></div>
-          <div class="plan best"><span class="ribbon">Consigliato</span><h3>Pro</h3><p class="price"><b>6,90 €</b> al mese</p><p class="muted">Per il professionista: tutto il necessario, senza limiti.</p><a class="btn primary" href="/prezzi">Dettagli</a></div>
-          <div class="plan"><h3>Max</h3><p class="price"><b>12,90 €</b> al mese</p><p class="muted">Per chi ha collaboratori o clienti da seguire, con l'assistente IA.</p><a class="btn" href="/prezzi">Dettagli</a></div>
+          <div class="plan best"><span class="ribbon">Consigliato</span><h3>Pro</h3><p class="price"><b>8,90 €</b> al mese</p><p class="muted">Per il professionista: tutto il necessario, senza limiti.</p><a class="btn primary" href="/prezzi">Dettagli</a></div>
+          <div class="plan"><h3>Max</h3><p class="price"><b>14,90 €</b> al mese</p><p class="muted">Per chi ha collaboratori o clienti da seguire, con l'assistente IA.</p><a class="btn" href="/prezzi">Dettagli</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="avvisami">
+      <div class="wrap narrow">
+        <div class="section-head center" data-prima>
+          <h2>Avvisami all'apertura</h2>
+          <p class="lead">Lascia la tua email: ti scriviamo una sola volta, il 1° gennaio 2027 a mezzanotte, quando aprono le iscrizioni.</p>
+        </div>
+        <form class="notify-form card" data-avvisami data-prima novalidate>
+          <label for="notify-email">La tua email</label>
+          <div class="notify-row">
+            <input id="notify-email" class="notify-input" type="email" name="email" autocomplete="email" inputmode="email" maxlength="254" required placeholder="nome@esempio.it">
+            <button class="btn primary" type="submit">Avvisami</button>
+          </div>
+          <div class="notify-trap" aria-hidden="true"><label>Lascia vuoto<input type="text" name="sito_web" tabindex="-1" autocomplete="off"></label></div>
+          <p class="notify-msg" role="status" aria-live="polite"></p>
+          <p class="small muted">Ti mandiamo subito un'email per confermare: senza conferma non ti scriviamo e cancelliamo l'indirizzo entro 7 giorni. Dopo l'avviso lo cancelliamo comunque. Dettagli nell'<a href="/privacy#avvisami">informativa sulla privacy</a>.</p>
+        </form>
+        <div class="section-head center" data-dopo hidden>
+          <h2>Beelancio è aperto</h2>
+          <p class="lead">Le iscrizioni sono aperte: crea il tuo account in un minuto.</p>
+          <div class="actions"><a class="btn primary" href="/#avvisami" data-iscriviti>Avvisami all'apertura</a></div>
         </div>
       </div>
     </section>
@@ -206,8 +243,8 @@
     <section class="section">
       <div class="wrap cta">
         <h2>Prova Beelancio con i tuoi numeri</h2>
-        <p class="lead">Al lancio ti iscrivi in un minuto, scegli le tue attività e registri il primo movimento. Niente da installare.</p>
-        <div class="actions"><a class="btn primary" href="mailto:info@beelancio.it?subject=Avvisami%20all'apertura%20di%20Beelancio&amp;body=Ciao%2C%20vorrei%20essere%20avvisato%20quando%20apre%20Beelancio.%0AIl%20mio%20lavoro%3A%20">Avvisami all'apertura</a><a class="btn" href="/guida">Leggi la guida</a></div>
+        <p class="lead">Dal 1° gennaio 2027 ti iscrivi in un minuto, scegli le tue attività e registri il primo movimento. Niente da installare.</p>
+        <div class="actions"><a class="btn primary" href="/#avvisami" data-iscriviti>Avvisami all'apertura</a><a class="btn" href="/guida">Leggi la guida</a></div>
       </div>
     </section>
   </main>
@@ -217,7 +254,7 @@
       <div class="foot-col">
         <a class="logo" href="/"><img src="icons/logo.svg" alt="" width="28" height="28"><span>Beelancio</span></a>
         <p class="muted small">Il bilancio delle tue attività. Un progetto di Bryant Developer, © <span data-anno>2026</span>.</p>
-        <p class="notice">Anteprima del sito: Beelancio non è ancora aperto al pubblico.</p>
+        <p class="notice" data-prima>Le iscrizioni a Beelancio aprono il 1° gennaio 2027.</p>
       </div>
       <nav aria-label="Altre pagine">
         <a href="/funzioni">Funzioni</a><a href="/prezzi">Prezzi</a><a href="/installa">Installa</a><a href="/guida">Guida</a>
