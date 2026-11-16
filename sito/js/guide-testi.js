@@ -342,6 +342,7 @@ export const GUIDE = {
       { titolo: "Codici di recupero", punti: [
         "Sono 10 codici da conservare in un posto sicuro (stampati o in un file). Ognuno vale una volta.",
         "Servono se dimentichi la password («Password dimenticata?» nella schermata di accesso) o se non hai il telefono per la verifica.",
+        "Se ti sei iscritto con l'email, in «Password dimenticata?» puoi anche farti mandare un link: vale 30 minuti e una volta sola. Con la verifica in due passaggi ti serve anche il codice dell'app.",
         "Puoi crearne di nuovi quando vuoi: quelli vecchi non valgono più.",
         "Chi si iscrive con il nome utente li riceve subito: senza email sono l'unico modo per rientrare da solo.",
       ] },
