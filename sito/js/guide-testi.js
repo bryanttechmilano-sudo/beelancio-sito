@@ -332,8 +332,10 @@ export const GUIDE = {
         "Dopo 5 tentativi sbagliati PIN, password e codici si bloccano per 15 minuti.",
       ] },
       { titolo: "Verifica in due passaggi", punti: [
-        "Gratis per tutti: oltre alla password serve un codice di 6 cifre che cambia ogni 30 secondi, da un'app sul telefono (Google Authenticator, Microsoft Authenticator o simili).",
-        "Per attivarla: «Attiva la verifica», scrivi la password, inserisci la chiave nell'app del telefono e scrivi il primo codice.",
+        "Gratis per tutti: oltre alla password serve un codice di 6 cifre che cambia ogni 30 secondi, da un'app sul telefono: Google Authenticator, Microsoft Authenticator, l'app Password dell'iPhone o simili.",
+        "Per attivarla: «Attiva la verifica», scrivi la password e inquadra il codice QR con l'app del telefono («Aggiungi» → «Scansiona un codice QR»). Poi scrivi le 6 cifre che compaiono nell'app e salva i codici di recupero.",
+        "Non riesci a inquadrare il codice? Sotto c'è la chiave da scrivere a mano nell'app («Inserisci una chiave», tipo «basato sul tempo»).",
+        "Ogni installazione di Beelancio ha i suoi account: la verifica attivata su app.beelancio.it vale lì, non su un Beelancio installato su un altro computer.",
         "Il PIN su un dispositivo di fiducia continua a funzionare senza codice.",
         "Hai cambiato telefono? Spegni la verifica e riattivala con il telefono nuovo.",
       ] },

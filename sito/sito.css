@@ -308,3 +308,12 @@ details.more[open] > summary { margin-bottom: 8px; }
 .notify-msg { margin: 0; min-height: 1.4em; }
 .notify-msg.ok { color: var(--ok); } .notify-msg.err { color: var(--err); }
 @media (max-width: 420px) { .countdown-n b { font-size: 1.3rem; } .notify-row .btn { flex: 1 1 100%; } }
+
+/* Pagina Installa: un riquadro per dispositivo, con l'immagine dei passi */
+.stack-s { display: flex; flex-direction: column; gap: 10px; }
+.install-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.install-card { display: grid; grid-template-columns: 1fr; gap: 16px; align-content: start; }
+.install-card h3 { display: flex; align-items: center; gap: 8px; margin: 0; }
+.install-img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); background: #f6f3ec; }
+.install-img.phone { max-width: 220px; justify-self: center; border: 0; background: transparent; }
+@media (max-width: 860px) { .install-grid { grid-template-columns: 1fr; } }

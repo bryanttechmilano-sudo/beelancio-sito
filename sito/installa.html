@@ -44,34 +44,63 @@
 
     <section class="section alt">
       <div class="wrap">
-        <div class="grid g3">
-          <div class="card">
-            <span class="ic"><span data-icon="laptop"></span></span>
-            <h3>Computer (Windows o Mac)</h3>
-            <ol class="steps">
-              <li><span>Apri Beelancio con <strong>Edge</strong> o <strong>Chrome</strong> e accedi.</span></li>
-              <li><span>Nella barra dell'indirizzo premi l'icona <strong>«Installa app»</strong> (oppure menu ⋯ → App → Installa).</span></li>
-              <li><span>Beelancio compare nel menu Start e sulla barra delle applicazioni, in una finestra sua.</span></li>
-            </ol>
-          </div>
-          <div class="card">
-            <span class="ic"><span data-icon="phone"></span></span>
-            <h3>Telefono Android</h3>
-            <ol class="steps">
-              <li><span>Apri Beelancio con <strong>Chrome</strong>.</span></li>
-              <li><span>Tocca il menu <strong>⋮</strong> in alto a destra.</span></li>
-              <li><span>Scegli <strong>«Aggiungi a schermata Home»</strong> oppure <strong>«Installa app»</strong>.</span></li>
-            </ol>
-          </div>
-          <div class="card">
-            <span class="ic"><span data-icon="phone"></span></span>
-            <h3>iPhone e iPad</h3>
-            <ol class="steps">
-              <li><span>Apri Beelancio con <strong>Safari</strong>.</span></li>
-              <li><span>Tocca il pulsante <strong>Condividi</strong> (il quadrato con la freccia).</span></li>
-              <li><span>Scegli <strong>«Aggiungi alla schermata Home»</strong>.</span></li>
-            </ol>
-          </div>
+        <div class="section-head">
+          <h2>Scegli il tuo dispositivo</h2>
+          <p class="lead">Si installa con il browser che usi già: <strong>non devi scaricare Chrome</strong> né altri programmi. Prima apri <strong>app.beelancio.it</strong>, poi segui i passi.</p>
+        </div>
+        <div class="install-grid">
+          <article class="card install-card" id="iphone">
+            <img class="install-img phone" src="img/installa-iphone.svg" width="280" height="480" loading="lazy" alt="Su iPhone: il pulsante Condividi in basso e poi «Aggiungi alla schermata Home»">
+            <div class="stack-s">
+              <h3><span data-icon="phone" data-size="20"></span> iPhone e iPad</h3>
+              <ol class="steps">
+                <li><span>Apri <strong>app.beelancio.it</strong> con <strong>Safari</strong>.</span></li>
+                <li><span>Tocca <strong>Condividi</strong> (il quadrato con la freccia in su), in basso o accanto all'indirizzo.</span></li>
+                <li><span>Scorri e tocca <strong>«Aggiungi alla schermata Home»</strong>, poi <strong>«Aggiungi»</strong>.</span></li>
+              </ol>
+              <p class="small muted">Da iOS 16.4 funziona allo stesso modo anche con Chrome, Edge e Firefox: pulsante Condividi → «Aggiungi alla schermata Home».</p>
+            </div>
+          </article>
+          <article class="card install-card" id="android">
+            <img class="install-img phone" src="img/installa-android.svg" width="280" height="480" loading="lazy" alt="Su Android: il menu con i tre puntini e poi «Installa app»">
+            <div class="stack-s">
+              <h3><span data-icon="phone" data-size="20"></span> Telefono Android</h3>
+              <ol class="steps">
+                <li><span>Apri <strong>app.beelancio.it</strong> con <strong>Chrome</strong>.</span></li>
+                <li><span>Tocca i <strong>tre puntini ⋮</strong> in alto a destra.</span></li>
+                <li><span>Tocca <strong>«Installa app»</strong> (su alcuni telefoni si chiama «Aggiungi a schermata Home»).</span></li>
+              </ol>
+              <p class="small muted"><strong>Samsung Internet:</strong> menu ☰ in basso → «Aggiungi pagina a» → «Schermata Home». <strong>Firefox:</strong> menu ⋮ → «Installa» o «Aggiungi alla schermata Home».</p>
+            </div>
+          </article>
+          <article class="card install-card" id="windows">
+            <img class="install-img" src="img/installa-computer.svg" width="480" height="300" loading="lazy" alt="Sul computer: l'icona Installa a destra nella barra dell'indirizzo">
+            <div class="stack-s">
+              <h3><span data-icon="laptop" data-size="20"></span> Computer Windows</h3>
+              <ol class="steps">
+                <li><span>Apri <strong>app.beelancio.it</strong> con <strong>Edge</strong> (c'è già in Windows) o con <strong>Chrome</strong>.</span></li>
+                <li><span>Nella barra dell'indirizzo, a destra, premi l'icona <strong>«Installa»</strong> (uno schermo con la freccia).</span></li>
+                <li><span>Conferma con <strong>«Installa»</strong>: Beelancio va nel menu Start, in una finestra sua.</span></li>
+              </ol>
+              <p class="small muted">Non vedi l'icona? Menu ⋯ in alto a destra → <strong>App</strong> → «Installa questo sito come app» (Edge) oppure <strong>Trasmetti, salva e condividi</strong> → «Installa pagina come app» (Chrome).</p>
+            </div>
+          </article>
+          <article class="card install-card" id="mac">
+            <img class="install-img" src="img/installa-mac.svg" width="480" height="300" loading="lazy" alt="Su Mac con Safari: menu File e poi «Aggiungi al Dock»">
+            <div class="stack-s">
+              <h3><span data-icon="laptop" data-size="20"></span> Mac</h3>
+              <ol class="steps">
+                <li><span>Apri <strong>app.beelancio.it</strong> con <strong>Safari</strong>.</span></li>
+                <li><span>Nella barra in alto scegli il menu <strong>File</strong>.</span></li>
+                <li><span>Scegli <strong>«Aggiungi al Dock…»</strong> e poi <strong>«Aggiungi»</strong>: l'icona compare nel Dock.</span></li>
+              </ol>
+              <p class="small muted">Serve macOS Sonoma (14) o successivo. Con Chrome o Edge sul Mac si fa come su Windows.</p>
+            </div>
+          </article>
+        </div>
+        <div class="callout space-top" id="firefox">
+          <h3>Uso Firefox (o un altro browser): devo scaricare Chrome?</h3>
+          <p>No. Sul telefono Firefox installa Beelancio come gli altri (vedi sopra). Sul computer Firefox per ora non crea l'icona dell'app, ma Beelancio funziona lo stesso: lo apri in una scheda e lo aggiungi ai preferiti. Se vuoi l'icona e la finestra sua, su Windows usa Edge, che c'è già, e sul Mac Safari.</p>
         </div>
       </div>
     </section>
