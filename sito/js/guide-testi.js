@@ -210,7 +210,7 @@ export const GUIDE = {
         "Mandaglielo con «Copia il link», «Manda su WhatsApp» o per email: aprendolo vede le sue riparazioni, i suoi lavori, i prossimi appuntamenti e i pagamenti, sempre aggiornati e senza password.",
         "Non vede mai note, note tecniche, seriale, ricambi e spese, conti usati, le descrizioni dei movimenti o altri clienti. L'elenco preciso è in «Cosa vede il cliente».",
         "Il link si vede solo quando lo crei: se lo perdi, «Crea un link nuovo» (quello vecchio smette subito di funzionare). «Disattiva» lo spegne del tutto.",
-        "Il link vale 90 giorni, oppure il tempo che scegli in «Vale per» (30 giorni, 6 mesi, 1 anno o «Non scade»). Scaduto, il cliente non lo apre più: «Prolunga lo stesso link» lo fa ripartire senza mandarne uno nuovo.",
+        "Il link vale 90 giorni, oppure il tempo che scegli in «Vale per» (30 giorni, 6 mesi o al massimo 1 anno: un link che non scade mai, se finisce nelle mani sbagliate, varrebbe per sempre). Scaduto, il cliente non lo apre più: «Prolunga lo stesso link» lo fa ripartire senza mandarne uno nuovo.",
         "Nella scheda vedi da quando il link è attivo e quante volte il cliente l'ha aperto. Il link lo crea e lo disattiva solo il titolare.",
         "Funziona per i clienti quando Beelancio è online; sul tuo PC puoi già aprirlo tu per vedere che cosa vedranno.",
       ] },
