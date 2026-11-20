@@ -366,11 +366,11 @@ export const GUIDE = {
       ] },
       { titolo: "Invita un collega", punti: [
         "Hai un codice personale: mandalo con «Copia il link» o «Manda su WhatsApp».",
-        "Il collega che si iscrive con il tuo codice ha la prova gratuita doppia: 14 giorni di Max invece di 7.",
-        "Vedi solo quanti colleghi hai invitato, quanti hanno usato la prova e quanti hanno pagato: mai i loro dati.",
+        "Il collega scrive il tuo codice quando si iscrive (con il link è già scritto). Il codice funziona da quando le iscrizioni sono aperte a tutti: durante la prova privata serve il codice personale della prova.",
+        "Vedi solo quanti colleghi hai invitato, quanti usano davvero Beelancio e quanti hanno pagato: mai i loro dati.",
       ] },
       { titolo: "Gocce di miele", punti: [
-        "10 gocce quando un collega usa davvero la prova (almeno 10 movimenti), fino a 5 colleghi al mese.",
+        "10 gocce quando un collega usa davvero Beelancio (almeno 10 movimenti), fino a 5 colleghi al mese.",
         "Quando il collega paga: 300 gocce se sceglie l'annuale; con il mensile 100 al 3° mese pagato e altre 200 al 12°. Al massimo 300 per collega.",
         "100 gocce valgono 1 mese gratis del tuo piano, al massimo 12 mesi all'anno.",
       ] },
