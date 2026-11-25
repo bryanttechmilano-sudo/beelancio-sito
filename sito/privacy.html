@@ -48,7 +48,7 @@
         <span class="eyebrow">Privacy e termini</span>
         <h1>Informativa sulla privacy</h1>
         <p class="lead">Come Beelancio tratta i dati personali di chi visita il sito e di chi usa l'app, spiegato in modo semplice.</p>
-        <p class="muted">In vigore dal 17 novembre 2026. Ultimo aggiornamento: 25 novembre 2026 (conferma dell'email, errori tecnici dell'app, promemoria per email).</p>
+        <p class="muted">In vigore dal 17 novembre 2026. Ultimo aggiornamento: 25 novembre 2026 (conferma dell'email, errori tecnici dell'app, promemoria per email, controllo anti-robot).</p>
         <nav class="legal-toc" aria-label="Altri documenti"><a href="/termini">Termini e condizioni</a><a href="/cookie">Cookie</a><a href="/legale">Tutti i documenti</a></nav>
       </div>
     </section>
@@ -81,6 +81,7 @@
           <li><b>Account:</b> nome, email oppure nome utente, ruolo (titolare o collaboratore), nome dell'account, piano, preferenze (per esempio il periodo scelto nel bilancio o il tema chiaro o scuro), data di iscrizione e dell'ultimo accesso, e se e quando hai confermato la tua email con il link che ti mandiamo.</li>
           <li><b>Password e PIN:</b> non li conosciamo. Salviamo solo un'impronta (hash) da cui non si può risalire alla password o al PIN.</li>
           <li><b>Sicurezza:</b> le sessioni aperte, i dispositivi dove hai attivato il PIN (con il nome che scegli tu), i tentativi sbagliati e gli eventuali blocchi. Se attivi la verifica in due passaggi, la sua chiave segreta; dei codici di recupero solo l'impronta. L'indirizzo IP serve solo per pochi minuti, nella memoria del server, per fermare chi prova troppe password: non viene salvato.</li>
+          <li><b>Controllo anti-robot:</b> quando ti iscrivi o chiedi il link per cambiare la password, il servizio Turnstile di Cloudflare controlla che tu sia una persona e non un programma automatico. Cloudflare vede alcuni dati tecnici del browser e del dispositivo, come l'indirizzo IP, solo per questo controllo, senza cookie di profilazione. A Beelancio arriva solo l'esito del controllo, che non salviamo.</li>
           <li><b>Registro delle operazioni:</b> chi ha fatto cosa e quando (per esempio «movimento creato»), per la sicurezza e per rimediare agli errori.</li>
           <li><b>I tuoi contenuti:</b> movimenti, conti, clienti, progetti, appuntamenti, riparazioni, magazzino, scadenze, risparmi e quello che scrivi nelle note.</li>
           <li><b>Estratti conto:</b> il file CSV o PDF che scegli per l'importazione viene letto solo sul tuo dispositivo e non arriva a Beelancio. Arrivano solo i movimenti che confermi nell'anteprima.</li>
@@ -109,7 +110,7 @@
             <thead><tr><th>Cosa facciamo</th><th>Base giuridica (GDPR)</th></tr></thead>
             <tbody>
               <tr><td>Farti usare Beelancio: account, accesso, i tuoi contenuti, l'assistente se lo usi</td><td>Contratto (art. 6, par. 1, lett. b)</td></tr>
-              <tr><td>Proteggere l'app e i dati: blocco dei tentativi, sessioni, registro, copie giornaliere</td><td>Legittimo interesse a tenere il servizio sicuro (art. 6, par. 1, lett. f)</td></tr>
+              <tr><td>Proteggere l'app e i dati: blocco dei tentativi, controllo anti-robot, sessioni, registro, copie giornaliere</td><td>Legittimo interesse a tenere il servizio sicuro (art. 6, par. 1, lett. f)</td></tr>
               <tr><td>Mandarti gli avvisi di servizio: rinnovi, sicurezza, cambi a questi testi</td><td>Contratto (art. 6, par. 1, lett. b)</td></tr>
               <tr><td>Fatture e documenti per il fisco</td><td>Obbligo di legge (art. 6, par. 1, lett. c)</td></tr>
               <tr><td>Rispondere alle tue richieste di assistenza</td><td>Contratto o tua richiesta (art. 6, par. 1, lett. b)</td></tr>
@@ -130,6 +131,7 @@
               <tr><td>Sessioni</td><td>Finiscono quando chiudi l'app o dopo il tempo di inattività scelto dal titolare dell'account (15 minuti, se non lo cambia).</td></tr>
               <tr><td>Dispositivi con PIN</td><td>90 giorni, o meno se li togli prima.</td></tr>
               <tr><td>Indirizzo IP per i tentativi di accesso</td><td>Pochi minuti, solo nella memoria del server.</td></tr>
+              <tr><td>Dati tecnici del controllo anti-robot</td><td>Beelancio non li salva. Cloudflare li tratta solo per il controllo e la sicurezza, secondo le sue condizioni.</td></tr>
               <tr><td>Email «Avvisami all'apertura»</td><td>Fino all'unica email dell'apertura, poi si cancella subito. Senza conferma, al massimo 7 giorni. Prima, se scegli «Non avvisatemi più».</td></tr>
               <tr><td>Documenti fiscali dei pagamenti</td><td>10 anni, come chiede la legge.</td></tr>
               <tr><td>Messaggi di assistenza a info@beelancio.it (domande, problemi, richieste sui tuoi dati)</td><td>2 anni dall'ultima risposta, o prima se ce lo chiedi e non servono più.</td></tr>
@@ -147,7 +149,7 @@
             <thead><tr><th>Fornitore</th><th>Per cosa</th><th>Dove</th></tr></thead>
             <tbody>
               <tr><td>Aruba S.p.A.</td><td>Server e database dell'app, email «Avvisami all'apertura»</td><td>Italia</td></tr>
-              <tr><td>Cloudflare, Inc.</td><td>Pubblicazione e protezione del sito e dell'app</td><td>Stati Uniti, con una rete di server nel mondo</td></tr>
+              <tr><td>Cloudflare, Inc.</td><td>Pubblicazione e protezione del sito e dell'app, controllo anti-robot (Turnstile)</td><td>Stati Uniti, con una rete di server nel mondo</td></tr>
               <tr><td>Aruba S.p.A.</td><td>Casella info@beelancio.it: assistenza, segnalazioni ed email di servizio</td><td>Italia</td></tr>
               <tr><td>Anthropic</td><td>Assistente IA, solo se lo usi</td><td>Stati Uniti</td></tr>
             </tbody>
@@ -163,6 +165,7 @@
         <ul>
           <li>I dati di ogni account sono separati e il controllo è sempre sul server: nessun utente vede quelli di un altro account.</li>
           <li>Password e PIN sono salvati solo come impronta robusta; dopo 5 tentativi sbagliati l'accesso si blocca.</li>
+          <li>All'iscrizione e quando chiedi il link per cambiare la password, il controllo anti-robot di Cloudflare (Turnstile) ferma i programmi automatici.</li>
           <li>Quando scegli una password controlliamo che non sia tra quelle già rubate in altri siti, con il servizio gratuito «Pwned Passwords» di Have I Been Pwned. Al servizio mandiamo solo i primi 5 caratteri dell'impronta della password: non la password, non l'impronta intera e non la tua email, quindi nessuno può risalire a te o alla password.</li>
           <li>Con «Esci da tutti gli altri dispositivi» chiudi in un colpo le sessioni aperte altrove e togli il PIN dagli altri dispositivi.</li>
           <li>Il link del portale clienti scade dopo il tempo scelto dal titolare (di base 90 giorni) e si può disattivare in qualsiasi momento.</li>
