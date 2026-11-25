@@ -327,7 +327,7 @@ export const GUIDE = {
     parti: [
       { titolo: "Entrare", punti: [
         "Si entra con l'email oppure con il nome utente, e la password.",
-        "La password ha almeno 10 caratteri, una maiuscola, una minuscola e un carattere speciale.",
+        "La password ha almeno 12 caratteri: va benissimo anche una frase di 3–4 parole che ricordi solo tu. Le password già finite in furti di dati di altri siti non si accettano.",
         "Il PIN di 6 cifre riapre l'app più in fretta su questo dispositivo. Attivalo solo su un dispositivo tuo.",
         "Dopo 5 tentativi sbagliati PIN, password e codici si bloccano per 15 minuti.",
       ] },
@@ -363,6 +363,11 @@ export const GUIDE = {
         "Da qui raggiungi Il mio profilo, Impostazioni (titolare), Accesso e PIN, Aggiungi un utente, Segnala un problema, Cambia utente e Blocca.",
         "«Segnala un problema» apre un modulo: scegli «Un problema» o «Un'idea», scrivi cosa è successo e premi «Manda». Arriva a chi fa Beelancio insieme alla pagina in cui sei, senza bisogno di un programma di posta. Non metterci password o dati dei tuoi clienti.",
         "Sul telefono lo stesso menu è nell'avatar in alto e nel pulsante «Altro».",
+      ] },
+      { titolo: "Promemoria per email", punti: [
+        "In Il mio profilo scegli «Ogni mattina» o «Ogni lunedì» e premi «Salva»: alle 7:30 ti arriva un'email con gli appuntamenti, le scadenze vicine o passate, le riparazioni pronte o in ritardo, i lavori in ritardo, i canoni da incassare e quanto resta da incassare.",
+        "Se non c'è niente da dire, non arriva niente. Togli «Con gli importi» se altri leggono la tua email.",
+        "«Mandami una prova adesso» ti fa vedere subito com'è fatta. Serve un'email confermata.",
       ] },
       { titolo: "Invita un collega", punti: [
         "Hai un codice personale: mandalo con «Copia il link» o «Manda su WhatsApp».",

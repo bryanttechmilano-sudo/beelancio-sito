@@ -226,13 +226,29 @@ export function field(label, control, help) {
 }
 export function input(attrs = {}) { return h('input', { class: 'input', ...attrs }); }
 
+// ---- WhatsApp ----
+// Numero per wa.me: solo cifre con il prefisso internazionale (per l'Italia si aggiunge 39). '' se non è un numero.
+export function waDigits(phone, country = 'IT') {
+  let d = String(phone || '').replace(/[^\d+]/g, '');
+  if (d.startsWith('+')) d = d.slice(1);
+  else if (d.startsWith('00')) d = d.slice(2);
+  else if ((country || 'IT') === 'IT') d = '39' + d;
+  else d = '';
+  return /^\d{8,15}$/.test(d) ? d : '';
+}
+// Link che apre WhatsApp verso quel numero con il testo già scritto (null se manca il numero)
+export function waLink(phone, country, text) {
+  const d = waDigits(phone, country);
+  return d ? `https://wa.me/${d}?text=${encodeURIComponent(text)}` : null;
+}
+// Importo per un messaggio al cliente: sempre in chiaro, anche con l'occhio chiuso
+export const eurPlain = (cents) => new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' }).format(Number(cents) / 100);
+
 // ---- Password ----
 // Regole delle password nuove: le stesse del server (server/auth.js), che le controlla comunque.
+// Dal 25/11 conta la lunghezza (linee guida NIST): va benissimo anche una frase di qualche parola.
 export const PASSWORD_RULES = [
-  ['Almeno 10 caratteri', (p) => p.length >= 10],
-  ['Una lettera maiuscola', (p) => /\p{Lu}/u.test(p)],
-  ['Una lettera minuscola', (p) => /\p{Ll}/u.test(p)],
-  ['Un carattere speciale (per esempio ! ? - _ @ #)', (p) => /[^\p{L}\p{N}\s]/u.test(p)],
+  ['Almeno 12 caratteri (va bene anche una frase di 3–4 parole che ricordi solo tu)', (p) => [...p].length >= 12],
 ];
 export const passwordOk = (p) => PASSWORD_RULES.every(([, ok]) => ok(p));
 export const PASSWORD_HINT = 'La password non rispetta ancora tutti i requisiti indicati sotto il campo.';
