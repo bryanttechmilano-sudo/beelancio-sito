@@ -480,7 +480,8 @@ export function buildForm({ fields, values = {}, submitLabel = 'Salva', onSubmit
 }
 
 // Campo di ricerca con risultati dal server. onPick(elemento) riceve la scelta.
-export function searchPicker({ placeholder, search, render, onPick, value = '' }) {
+// extra(q): voci in fondo ai risultati, per esempio «+ Nuovo cliente: “Mario”» → [{ label, onPick }]
+export function searchPicker({ placeholder, search, render, onPick, value = '', extra = null }) {
   const inp = input({ placeholder, type: 'search', autocomplete: 'off', value });
   // i risultati «galleggiano» sopra la pagina: così non vengono tagliati in fondo alle finestre
   const results = h('div', { class: 'menu floating', role: 'listbox' });
@@ -502,7 +503,8 @@ export function searchPicker({ placeholder, search, render, onPick, value = '' }
       const items = await search(q);
       if (my !== seq || !inp.isConnected || document.activeElement !== inp) return;
       const btns = items.map((it) => h('button', { type: 'button', role: 'option', onclick: () => { close(); onPick(it, inp); } }, render(it)));
-      results.replaceChildren(...(btns.length ? btns : [h('div', { class: 'muted small', }, 'Nessun risultato')]));
+      const more = (extra ? extra(q) : []).map((x) => h('button', { type: 'button', role: 'option', class: 'add-new', onclick: () => { close(); x.onPick(inp); } }, icon('plus', 15), x.label));
+      results.replaceChildren(...(btns.length ? btns : [h('div', { class: 'muted small', }, 'Nessun risultato')]), ...more);
       if (!isOpen()) {
         document.body.append(results);
         window.addEventListener('scroll', onScroll, true);
